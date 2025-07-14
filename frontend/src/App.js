@@ -77,10 +77,19 @@ function App() {
     setShowLanguageMenu(false);
   };
 
-  const getCurrentLanguageFlag = () => {
-    const flags = { en: '🇺🇸', fr: '🇫🇷', ar: '🇱🇧' };
-    return flags[i18n.language] || '🇺🇸';
-  };
+  // Close language menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (showLanguageMenu && !event.target.closest('.language-menu')) {
+        setShowLanguageMenu(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [showLanguageMenu]);
 
   useEffect(() => {
     if (token) {
