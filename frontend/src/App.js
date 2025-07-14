@@ -115,6 +115,22 @@ function App() {
     setUser(null);
     setIsAuthenticated(false);
     setCurrentPage('home');
+    // Reset all form states
+    setLoginEmail('');
+    setLoginPassword('');
+    setLoginError('');
+    setRegisterFormData({ email: '', password: '', name: '', phone: '' });
+    setRegisterError('');
+    setCaseFormData({ case_type: 'divorce', title: '', description: '' });
+    setCaseFiles([]);
+    setCaseSuccess(false);
+    setCaseError('');
+    setAppointmentDate('');
+    setAppointmentNotes('');
+    setBookingSuccess(false);
+    setBookingError('');
+    setCases([]);
+    setAppointments([]);
   };
 
   const renderNavigation = () => (
