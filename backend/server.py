@@ -45,6 +45,29 @@ app.add_middleware(
 # Security
 security = HTTPBearer()
 
+@app.on_event("startup")
+async def startup_event():
+    # Create admin user if it doesn't exist
+    admin_email = "admin@unionlaw.com"
+    admin_user = await users_collection.find_one({"email": admin_email})
+    
+    if not admin_user:
+        admin_id = str(uuid.uuid4())
+        admin_password = hash_password("admin123")
+        
+        admin_data = {
+            "id": admin_id,
+            "email": admin_email,
+            "password": admin_password,
+            "name": "Admin User",
+            "role": UserRole.ADMIN,
+            "phone": "+961-70-000000",
+            "created_at": datetime.utcnow()
+        }
+        
+        await users_collection.insert_one(admin_data)
+        print(f"Admin user created: {admin_email} / password: admin123")
+
 # Models
 class UserRole(str, Enum):
     CLIENT = "client"
