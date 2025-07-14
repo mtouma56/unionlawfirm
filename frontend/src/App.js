@@ -48,12 +48,10 @@ function App() {
   const [appointments, setAppointments] = useState([]);
   const [dashboardLoading, setDashboardLoading] = useState(true);
   
-  // Admin dashboard state
-  const [adminCases, setAdminCases] = useState([]);
-  const [adminUsers, setAdminUsers] = useState([]);
-  const [adminLoading, setAdminLoading] = useState(true);
-  const [selectedCase, setSelectedCase] = useState(null);
-  const [showCaseModal, setShowCaseModal] = useState(false);
+  // Videos state
+  const [videos, setVideos] = useState([]);
+  const [videosLoading, setVideosLoading] = useState(true);
+  const [selectedCategory, setSelectedCategory] = useState('all');
 
   useEffect(() => {
     if (token) {
