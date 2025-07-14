@@ -156,7 +156,7 @@ function App() {
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
               <button
-                onClick={() => setCurrentPage('home')}
+                onClick={() => navigateToPage('home')}
                 className={`px-3 py-2 rounded-md text-sm font-medium ${
                   currentPage === 'home' 
                     ? 'bg-yellow-100 text-yellow-800' 
@@ -166,7 +166,7 @@ function App() {
                 Home
               </button>
               <button
-                onClick={() => setCurrentPage('videos')}
+                onClick={() => navigateToPage('videos')}
                 className={`px-3 py-2 rounded-md text-sm font-medium ${
                   currentPage === 'videos' 
                     ? 'bg-yellow-100 text-yellow-800' 
