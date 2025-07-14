@@ -409,27 +409,26 @@ function App() {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
           <div className="text-center">
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-              Expert Family Law
+              {t('hero.title')}
               <span className="bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent block">
-                Legal Services
+                {t('hero.subtitle')}
               </span>
             </h1>
             <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-              Specialized in divorce, inheritance, custody, and alimony cases. 
-              Professional legal counsel with years of experience in Lebanese family law.
+              {t('hero.description')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button
                 onClick={() => setCurrentPage(isAuthenticated ? 'submit-case' : 'register')}
                 className="bg-gradient-to-r from-yellow-400 to-yellow-600 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:from-yellow-500 hover:to-yellow-700 transition-all duration-200 transform hover:scale-105"
               >
-                Submit Your Case
+                {t('hero.submitCase')}
               </button>
               <button
                 onClick={() => setCurrentPage('videos')}
                 className="border-2 border-yellow-400 text-yellow-400 px-8 py-3 rounded-lg text-lg font-semibold hover:bg-yellow-400 hover:text-white transition-all duration-200"
               >
-                Watch Legal Videos
+                {t('hero.watchVideos')}
               </button>
             </div>
           </div>
@@ -441,36 +440,40 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Our Legal Services
+              {t('services.title')}
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Comprehensive family law services tailored to your specific needs
+              {t('services.description')}
             </p>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
-                title: "Divorce Proceedings",
-                description: "Complete divorce legal support including asset division and custody arrangements",
+                key: 'divorce',
+                title: t('services.divorce.title'),
+                description: t('services.divorce.description'),
                 icon: "⚖️",
                 image: "https://images.unsplash.com/photo-1600506451234-9e555c0c8d05"
               },
               {
-                title: "Inheritance Cases",
-                description: "Expert guidance on inheritance law and estate distribution",
+                key: 'inheritance',
+                title: t('services.inheritance.title'),
+                description: t('services.inheritance.description'),
                 icon: "🏛️",
                 image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85"
               },
               {
-                title: "Child Custody",
-                description: "Protecting your parental rights and child's best interests",
+                key: 'custody',
+                title: t('services.custody.title'),
+                description: t('services.custody.description'),
                 icon: "👨‍👩‍👧‍👦",
                 image: "https://images.unsplash.com/photo-1619418602850-35ad20aa1700"
               },
               {
-                title: "Alimony & Support",
-                description: "Fair financial support arrangements and modifications",
+                key: 'alimony',
+                title: t('services.alimony.title'),
+                description: t('services.alimony.description'),
                 icon: "💼",
                 image: "https://images.unsplash.com/photo-1600506451234-9e555c0c8d05"
               }
@@ -486,7 +489,7 @@ function App() {
                     onClick={() => setCurrentPage(isAuthenticated ? 'submit-case' : 'register')}
                     className="text-yellow-600 hover:text-yellow-800 font-medium"
                   >
-                    Learn More →
+                    {t('services.learnMore')} →
                   </button>
                 </div>
               </div>
@@ -499,23 +502,23 @@ function App() {
       <div className="bg-gradient-to-r from-yellow-400 to-yellow-600 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Ready to Get Started?
+            {t('cta.title')}
           </h2>
           <p className="text-xl text-yellow-100 mb-8 max-w-2xl mx-auto">
-            Schedule a consultation or submit your case today. Our experienced team is here to help.
+            {t('cta.description')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
               onClick={() => setCurrentPage(isAuthenticated ? 'booking' : 'register')}
               className="bg-white text-yellow-600 px-8 py-3 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-all duration-200"
             >
-              Book Consultation
+              {t('cta.bookConsultation')}
             </button>
             <button
               onClick={() => setCurrentPage(isAuthenticated ? 'submit-case' : 'register')}
               className="border-2 border-white text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-white hover:text-yellow-600 transition-all duration-200"
             >
-              Submit Case
+              {t('cta.submitCase')}
             </button>
           </div>
         </div>
