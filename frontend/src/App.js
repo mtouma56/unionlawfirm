@@ -420,19 +420,10 @@ function App() {
   };
 
   const renderRegister = () => {
-    const [formData, setFormData] = useState({
-      email: '',
-      password: '',
-      name: '',
-      phone: ''
-    });
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState('');
-
     const handleSubmit = async (e) => {
       e.preventDefault();
-      setLoading(true);
-      setError('');
+      setRegisterLoading(true);
+      setRegisterError('');
 
       try {
         const response = await fetch(`${API_URL}/api/auth/register`, {
@@ -440,7 +431,7 @@ function App() {
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify(formData),
+          body: JSON.stringify(registerFormData),
         });
 
         const data = await response.json();
@@ -452,12 +443,12 @@ function App() {
           setIsAuthenticated(true);
           setCurrentPage('dashboard');
         } else {
-          setError(data.detail || 'Registration failed');
+          setRegisterError(data.detail || 'Registration failed');
         }
       } catch (error) {
-        setError('Network error. Please try again.');
+        setRegisterError('Network error. Please try again.');
       } finally {
-        setLoading(false);
+        setRegisterLoading(false);
       }
     };
 
@@ -470,9 +461,9 @@ function App() {
             </h2>
           </div>
           <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
-            {error && (
+            {registerError && (
               <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
-                {error}
+                {registerError}
               </div>
             )}
             <div className="space-y-4">
@@ -481,41 +472,41 @@ function App() {
                 required
                 className="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm"
                 placeholder="Full Name"
-                value={formData.name}
-                onChange={(e) => setFormData({...formData, name: e.target.value})}
+                value={registerFormData.name}
+                onChange={(e) => setRegisterFormData({...registerFormData, name: e.target.value})}
               />
               <input
                 type="email"
                 required
                 className="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm"
                 placeholder="Email address"
-                value={formData.email}
-                onChange={(e) => setFormData({...formData, email: e.target.value})}
+                value={registerFormData.email}
+                onChange={(e) => setRegisterFormData({...registerFormData, email: e.target.value})}
               />
               <input
                 type="tel"
                 className="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm"
                 placeholder="Phone Number (optional)"
-                value={formData.phone}
-                onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                value={registerFormData.phone}
+                onChange={(e) => setRegisterFormData({...registerFormData, phone: e.target.value})}
               />
               <input
                 type="password"
                 required
                 className="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 sm:text-sm"
                 placeholder="Password"
-                value={formData.password}
-                onChange={(e) => setFormData({...formData, password: e.target.value})}
+                value={registerFormData.password}
+                onChange={(e) => setRegisterFormData({...registerFormData, password: e.target.value})}
               />
             </div>
 
             <div>
               <button
                 type="submit"
-                disabled={loading}
+                disabled={registerLoading}
                 className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-gradient-to-r from-yellow-400 to-yellow-600 hover:from-yellow-500 hover:to-yellow-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500 disabled:opacity-50"
               >
-                {loading ? 'Creating account...' : 'Create Account'}
+                {registerLoading ? 'Creating account...' : 'Create Account'}
               </button>
             </div>
 
