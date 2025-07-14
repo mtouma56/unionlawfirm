@@ -67,10 +67,25 @@ function App() {
   }, [token]);
 
   useEffect(() => {
-    if (currentPage === 'admin' && user?.role === 'admin') {
-      fetchAdminData();
+    if (currentPage === 'videos') {
+      fetchVideos();
     }
-  }, [currentPage, user]);
+  }, [currentPage]);
+
+  const fetchVideos = async () => {
+    setVideosLoading(true);
+    try {
+      const response = await fetch(`${API_URL}/api/videos`);
+      if (response.ok) {
+        const data = await response.json();
+        setVideos(data);
+      }
+    } catch (error) {
+      console.error('Error fetching videos:', error);
+    } finally {
+      setVideosLoading(false);
+    }
+  };
 
   const fetchAdminData = async () => {
     setAdminLoading(true);
