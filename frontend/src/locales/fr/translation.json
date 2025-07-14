@@ -1,0 +1,198 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "videos": "Vidéos Juridiques",
+    "submitCase": "Soumettre un Cas",
+    "booking": "Prendre RDV",
+    "dashboard": "Tableau de Bord",
+    "admin": "Admin",
+    "login": "Connexion",
+    "register": "S'inscrire",
+    "logout": "Déconnexion"
+  },
+  "hero": {
+    "title": "Experts en Droit",
+    "subtitle": "de la Famille",
+    "description": "Spécialisés dans les affaires de divorce, héritage, garde d'enfants et pension alimentaire. Conseils juridiques professionnels avec des années d'expérience en droit familial libanais.",
+    "submitCase": "Soumettre Votre Cas",
+    "watchVideos": "Regarder les Vidéos Juridiques"
+  },
+  "services": {
+    "title": "Nos Services Juridiques",
+    "description": "Services complets de droit de la famille adaptés à vos besoins spécifiques",
+    "divorce": {
+      "title": "Procédures de Divorce",
+      "description": "Support juridique complet pour le divorce incluant la division des biens et les arrangements de garde"
+    },
+    "inheritance": {
+      "title": "Affaires d'Héritage",
+      "description": "Conseils d'experts sur le droit des successions et la distribution des biens"
+    },
+    "custody": {
+      "title": "Garde d'Enfants",
+      "description": "Protection de vos droits parentaux et de l'intérêt supérieur de l'enfant"
+    },
+    "alimony": {
+      "title": "Pension Alimentaire",
+      "description": "Arrangements équitables de soutien financier et modifications"
+    },
+    "learnMore": "En Savoir Plus"
+  },
+  "cta": {
+    "title": "Prêt à Commencer ?",
+    "description": "Planifiez une consultation ou soumettez votre cas aujourd'hui. Notre équipe expérimentée est là pour vous aider.",
+    "bookConsultation": "Réserver une Consultation",
+    "submitCase": "Soumettre un Cas"
+  },
+  "auth": {
+    "signInTitle": "Connectez-vous à votre compte",
+    "createAccountTitle": "Créer votre compte",
+    "signIn": "Se connecter",
+    "signUp": "Créer un Compte",
+    "signingIn": "Connexion...",
+    "creatingAccount": "Création du compte...",
+    "emailAddress": "Adresse e-mail",
+    "password": "Mot de passe",
+    "fullName": "Nom complet",
+    "phoneNumber": "Numéro de téléphone (optionnel)",
+    "noAccount": "Pas de compte ? Inscrivez-vous ici",
+    "hasAccount": "Déjà un compte ? Connectez-vous ici"
+  },
+  "dashboard": {
+    "welcome": "Bienvenue, {{name}} !",
+    "subtitle": "Gérez vos cas et rendez-vous",
+    "myCases": "Mes Cas",
+    "myAppointments": "Mes Rendez-vous",
+    "submitNewCase": "Soumettre un Nouveau Cas",
+    "bookAppointment": "Prendre RDV",
+    "noCases": "Aucun cas soumis pour le moment",
+    "noAppointments": "Aucun rendez-vous planifié",
+    "submitFirstCase": "Soumettre votre premier cas",
+    "bookFirstAppointment": "Réserver votre premier rendez-vous",
+    "loading": "Chargement de votre tableau de bord...",
+    "caseType": "Type : {{type}}",
+    "files": "Fichiers : {{count}}",
+    "amount": "Montant : {{amount}}$",
+    "payment": "Paiement : {{status}}",
+    "time": "Heure : {{time}}"
+  },
+  "submitCase": {
+    "title": "Soumettre Votre Cas Juridique",
+    "caseType": "Type de Cas",
+    "caseTitle": "Titre du Cas",
+    "caseDescription": "Description du Cas",
+    "supportingDocuments": "Documents Justificatifs",
+    "acceptedFormats": "Formats acceptés : PDF, Word, Excel, Images (JPG, PNG, GIF)",
+    "caseTitlePlaceholder": "Titre bref pour votre cas",
+    "caseDescriptionPlaceholder": "Description détaillée de votre cas juridique...",
+    "submitting": "Soumission...",
+    "submit": "Soumettre le Cas",
+    "successTitle": "Cas Soumis avec Succès !",
+    "successMessage": "Votre cas a été soumis et est maintenant en attente d'examen. Nous vous contacterons bientôt.",
+    "goToDashboard": "Aller au Tableau de Bord",
+    "types": {
+      "divorce": "Divorce",
+      "inheritance": "Héritage",
+      "custody": "Garde d'Enfants",
+      "alimony": "Pension Alimentaire",
+      "other": "Autre"
+    }
+  },
+  "booking": {
+    "title": "Réserver une Consultation",
+    "appointmentDateTime": "Date et Heure du Rendez-vous",
+    "additionalNotes": "Notes Supplémentaires (Optionnel)",
+    "notesPlaceholder": "Sujets spécifiques que vous aimeriez discuter...",
+    "consultationFee": "Frais de Consultation",
+    "feeDescription": "Frais de consultation standard : 100$\nLe paiement sera traité après confirmation.",
+    "booking": "Réservation...",
+    "bookAppointment": "Réserver un Rendez-vous",
+    "successTitle": "Rendez-vous Réservé avec Succès !",
+    "successMessage": "Votre rendez-vous a été planifié. Le paiement sera traité séparément.",
+    "goToDashboard": "Aller au Tableau de Bord"
+  },
+  "admin": {
+    "title": "Tableau de Bord Administrateur",
+    "subtitle": "Gérer les cas, utilisateurs et rendez-vous",
+    "accessDenied": "Accès Refusé",
+    "noPermission": "Vous n'avez pas la permission d'accéder à cette page.",
+    "loading": "Chargement du tableau de bord admin...",
+    "totalCases": "Cas Totaux",
+    "pendingCases": "Cas en Attente",
+    "activeCases": "Cas Actifs",
+    "allCases": "Tous les Cas",
+    "case": "Cas",
+    "client": "Client",
+    "type": "Type",
+    "status": "Statut",
+    "created": "Créé",
+    "actions": "Actions",
+    "view": "Voir",
+    "review": "Examiner",
+    "caseDetails": "Détails du Cas",
+    "title": "Titre",
+    "description": "Description",
+    "files": "Fichiers",
+    "filesAttached": "{{count}} fichiers attachés",
+    "updateStatus": "Mettre à Jour le Statut",
+    "underReview": "En Cours d'Examen",
+    "inProgress": "En Cours",
+    "completed": "Terminé",
+    "rejected": "Rejeté",
+    "close": "Fermer",
+    "statuses": {
+      "pending": "en attente",
+      "under_review": "en cours d'examen",
+      "in_progress": "en cours",
+      "completed": "terminé",
+      "rejected": "rejeté"
+    }
+  },
+  "videos": {
+    "title": "Vidéos Éducatives Juridiques",
+    "description": "Apprenez sur les cas courants de droit de la famille et les procédures avec notre contenu éducatif",
+    "categories": {
+      "all": "Toutes les Vidéos",
+      "divorce": "Droit du Divorce",
+      "inheritance": "Héritage",
+      "custody": "Garde d'Enfants",
+      "alimony": "Pension Alimentaire"
+    },
+    "loading": "Chargement des vidéos...",
+    "comingSoon": "Bibliothèque Vidéo Bientôt Disponible",
+    "comingSoonDescription": "Nous préparons des vidéos éducatives sur les sujets de droit de la famille incluant les procédures de divorce, les droits d'héritage et les questions de garde.",
+    "topics": {
+      "divorce": "• Procédures et démarches de divorce",
+      "inheritance": "• Droit des successions et planification patrimoniale",
+      "custody": "• Garde d'enfants et directives de soutien",
+      "alimony": "• Pension alimentaire et arrangements financiers"
+    },
+    "submitCaseInstead": "Soumettre un Cas à la Place",
+    "minutes": "{{duration}} minutes",
+    "views": "{{views}} vues",
+    "watchVideo": "Regarder la Vidéo"
+  },
+  "common": {
+    "loading": "Chargement...",
+    "error": "Une erreur s'est produite. Veuillez réessayer.",
+    "success": "Succès !",
+    "cancel": "Annuler",
+    "save": "Sauvegarder",
+    "edit": "Modifier",
+    "delete": "Supprimer",
+    "confirm": "Confirmer",
+    "back": "Retour",
+    "next": "Suivant",
+    "previous": "Précédent",
+    "search": "Rechercher",
+    "filter": "Filtrer",
+    "sort": "Trier",
+    "date": "Date",
+    "name": "Nom",
+    "email": "E-mail",
+    "phone": "Téléphone",
+    "address": "Adresse",
+    "required": "Requis",
+    "optional": "Optionnel"
+  }
+}
