@@ -706,7 +706,7 @@ function App() {
       } catch (error) {
         console.error('Error fetching user data:', error);
       } finally {
-        setLoading(false);
+        setDashboardLoading(false);
       }
     };
 
