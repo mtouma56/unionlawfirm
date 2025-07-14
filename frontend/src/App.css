@@ -25,6 +25,19 @@
   transform: scale(1.05);
 }
 
+/* Ensure mobile language selector is visible */
+@media (max-width: 767px) {
+  .language-menu {
+    display: block !important;
+    visibility: visible !important;
+  }
+  
+  .language-menu button {
+    display: flex !important;
+    visibility: visible !important;
+  }
+}
+
 /* Mobile-specific adjustments */
 @media (max-width: 768px) {
   .mobile-nav {
