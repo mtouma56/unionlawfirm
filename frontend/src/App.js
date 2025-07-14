@@ -526,27 +526,17 @@ function App() {
   };
 
   const renderSubmitCase = () => {
-    const [formData, setFormData] = useState({
-      case_type: 'divorce',
-      title: '',
-      description: ''
-    });
-    const [files, setFiles] = useState([]);
-    const [loading, setLoading] = useState(false);
-    const [success, setSuccess] = useState(false);
-    const [error, setError] = useState('');
-
     const handleSubmit = async (e) => {
       e.preventDefault();
-      setLoading(true);
-      setError('');
+      setCaseLoading(true);
+      setCaseError('');
 
       const formDataToSend = new FormData();
-      formDataToSend.append('case_type', formData.case_type);
-      formDataToSend.append('title', formData.title);
-      formDataToSend.append('description', formData.description);
+      formDataToSend.append('case_type', caseFormData.case_type);
+      formDataToSend.append('title', caseFormData.title);
+      formDataToSend.append('description', caseFormData.description);
 
-      Array.from(files).forEach(file => {
+      Array.from(caseFiles).forEach(file => {
         formDataToSend.append('files', file);
       });
 
@@ -562,20 +552,20 @@ function App() {
         const data = await response.json();
 
         if (response.ok) {
-          setSuccess(true);
-          setFormData({ case_type: 'divorce', title: '', description: '' });
-          setFiles([]);
+          setCaseSuccess(true);
+          setCaseFormData({ case_type: 'divorce', title: '', description: '' });
+          setCaseFiles([]);
         } else {
-          setError(data.detail || 'Failed to submit case');
+          setCaseError(data.detail || 'Failed to submit case');
         }
       } catch (error) {
-        setError('Network error. Please try again.');
+        setCaseError('Network error. Please try again.');
       } finally {
-        setLoading(false);
+        setCaseLoading(false);
       }
     };
 
-    if (success) {
+    if (caseSuccess) {
       return (
         <div className="min-h-screen bg-gray-50 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
           <div className="max-w-md w-full text-center">
@@ -601,9 +591,9 @@ function App() {
             <h2 className="text-3xl font-bold text-gray-900 mb-8">Submit Your Legal Case</h2>
             
             <form onSubmit={handleSubmit} className="space-y-6">
-              {error && (
+              {caseError && (
                 <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
-                  {error}
+                  {caseError}
                 </div>
               )}
 
@@ -612,8 +602,8 @@ function App() {
                   Case Type
                 </label>
                 <select
-                  value={formData.case_type}
-                  onChange={(e) => setFormData({...formData, case_type: e.target.value})}
+                  value={caseFormData.case_type}
+                  onChange={(e) => setCaseFormData({...caseFormData, case_type: e.target.value})}
                   className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-yellow-500 focus:border-yellow-500"
                 >
                   <option value="divorce">Divorce</option>
@@ -631,8 +621,8 @@ function App() {
                 <input
                   type="text"
                   required
-                  value={formData.title}
-                  onChange={(e) => setFormData({...formData, title: e.target.value})}
+                  value={caseFormData.title}
+                  onChange={(e) => setCaseFormData({...caseFormData, title: e.target.value})}
                   className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-yellow-500 focus:border-yellow-500"
                   placeholder="Brief title for your case"
                 />
@@ -645,8 +635,8 @@ function App() {
                 <textarea
                   required
                   rows={6}
-                  value={formData.description}
-                  onChange={(e) => setFormData({...formData, description: e.target.value})}
+                  value={caseFormData.description}
+                  onChange={(e) => setCaseFormData({...caseFormData, description: e.target.value})}
                   className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-yellow-500 focus:border-yellow-500"
                   placeholder="Detailed description of your legal case..."
                 />
@@ -660,7 +650,7 @@ function App() {
                   type="file"
                   multiple
                   accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.gif,.xls,.xlsx"
-                  onChange={(e) => setFiles(e.target.files)}
+                  onChange={(e) => setCaseFiles(e.target.files)}
                   className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-yellow-500 focus:border-yellow-500"
                 />
                 <p className="text-sm text-gray-500 mt-1">
@@ -671,10 +661,10 @@ function App() {
               <div className="flex justify-end">
                 <button
                   type="submit"
-                  disabled={loading}
+                  disabled={caseLoading}
                   className="bg-gradient-to-r from-yellow-400 to-yellow-600 text-white px-8 py-3 rounded-lg font-semibold hover:from-yellow-500 hover:to-yellow-700 disabled:opacity-50 transition-all duration-200"
                 >
-                  {loading ? 'Submitting...' : 'Submit Case'}
+                  {caseLoading ? 'Submitting...' : 'Submit Case'}
                 </button>
               </div>
             </form>
