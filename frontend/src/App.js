@@ -1319,6 +1319,8 @@ function App() {
         return isAuthenticated ? renderBooking() : renderLogin();
       case 'videos':
         return renderVideos();
+      case 'admin':
+        return renderAdmin();
       default:
         return renderHome();
     }
