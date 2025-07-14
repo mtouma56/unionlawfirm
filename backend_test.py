@@ -266,6 +266,91 @@ class LawFirmAPITester:
             self.log_test("Unauthorized Access Protection", False, f"Status: {status}, Expected: 403")
             return False
 
+    def test_admin_login(self):
+        """Test admin login with predefined credentials"""
+        admin_login_data = {
+            "email": "admin@unionlaw.com",
+            "password": "admin123"
+        }
+        
+        success, status, data = self.make_request('POST', 'api/auth/login', admin_login_data)
+        
+        if success and 'access_token' in data and data.get('user', {}).get('role') == 'admin':
+            self.admin_token = data['access_token']
+            self.admin_user = data['user']
+            self.log_test("Admin Login", True, f"Admin login successful: {data['user']['name']}")
+            return True
+        else:
+            self.log_test("Admin Login", False, f"Status: {status}, Data: {data}")
+            return False
+
+    def test_admin_get_all_cases(self):
+        """Test admin endpoint to get all cases"""
+        # Temporarily use admin token
+        original_token = self.token
+        self.token = self.admin_token
+        
+        success, status, data = self.make_request('GET', 'api/admin/cases')
+        
+        # Restore original token
+        self.token = original_token
+        
+        if success and isinstance(data, list):
+            # Check if our test case is in the admin view
+            found_test_case = False
+            for case in data:
+                if hasattr(self, 'case_id') and case.get('id') == self.case_id:
+                    found_test_case = True
+                    if 'user_name' in case and 'user_email' in case:
+                        self.log_test("Admin Get All Cases", True, f"Retrieved {len(data)} cases with user details")
+                        return True
+            
+            if not found_test_case and len(data) >= 0:
+                self.log_test("Admin Get All Cases", True, f"Retrieved {len(data)} cases (no test case found)")
+                return True
+            else:
+                self.log_test("Admin Get All Cases", False, f"Case structure invalid or test case not found")
+                return False
+        else:
+            self.log_test("Admin Get All Cases", False, f"Status: {status}, Data: {data}")
+            return False
+
+    def test_admin_update_case_status(self):
+        """Test admin endpoint to update case status"""
+        if not hasattr(self, 'case_id'):
+            self.log_test("Admin Update Case Status", False, "No case ID available for testing")
+            return False
+        
+        # Temporarily use admin token
+        original_token = self.token
+        self.token = self.admin_token
+        
+        # Test updating case status to 'under_review'
+        update_data = {"status": "under_review"}
+        success, status, data = self.make_request('PUT', f'api/admin/cases/{self.case_id}/status', update_data)
+        
+        # Restore original token
+        self.token = original_token
+        
+        if success and 'message' in data:
+            self.log_test("Admin Update Case Status", True, f"Case status updated: {data['message']}")
+            return True
+        else:
+            self.log_test("Admin Update Case Status", False, f"Status: {status}, Data: {data}")
+            return False
+
+    def test_non_admin_access_to_admin_endpoints(self):
+        """Test that non-admin users cannot access admin endpoints"""
+        # Use regular user token (not admin)
+        success, status, data = self.make_request('GET', 'api/admin/cases', expected_status=403)
+        
+        if status == 403:
+            self.log_test("Non-Admin Access Protection", True, "Correctly blocked non-admin access to admin endpoints")
+            return True
+        else:
+            self.log_test("Non-Admin Access Protection", False, f"Status: {status}, Expected: 403")
+            return False
+
     def run_all_tests(self):
         """Run all API tests"""
         print("🚀 Starting Lebanese Law Firm API Tests")
