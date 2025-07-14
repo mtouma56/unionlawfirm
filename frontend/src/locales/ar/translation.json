@@ -172,6 +172,44 @@
     "views": "{{views}} مشاهدة",
     "watchVideo": "شاهد الفيديو"
   },
+  "footer": {
+    "contact": {
+      "title": "معلومات الاتصال",
+      "address": "123 شارع القانون، بيروت، لبنان",
+      "phone": "+961 1 234 567",
+      "email": "contact@unionlaw.com",
+      "hours": "الإثنين - الجمعة: 9:00 ص - 6:00 م"
+    },
+    "services": {
+      "title": "خدماتنا",
+      "divorce": "قانون الطلاق",
+      "inheritance": "قضايا الميراث",
+      "custody": "حضانة الأطفال",
+      "alimony": "النفقة والإعالة",
+      "consultation": "استشارة قانونية"
+    },
+    "quickLinks": {
+      "title": "روابط سريعة",
+      "about": "من نحن",
+      "services": "الخدمات",
+      "videos": "الفيديوهات القانونية",
+      "contact": "اتصل بنا",
+      "privacy": "سياسة الخصوصية",
+      "terms": "شروط الاستخدام"
+    },
+    "social": {
+      "title": "تابعنا",
+      "facebook": "فيسبوك",
+      "linkedin": "لينكد إن",
+      "twitter": "تويتر",
+      "instagram": "إنستغرام"
+    },
+    "legal": {
+      "copyright": "© 2024 Union Law Firm. جميع الحقوق محفوظة.",
+      "subtitle": "خدمات قانونية مهنية في لبنان",
+      "licensed": "مرخص لممارسة المحاماة في لبنان"
+    }
+  },
   "common": {
     "loading": "جاري التحميل...",
     "error": "حدث خطأ. يرجى المحاولة مرة أخرى.",
