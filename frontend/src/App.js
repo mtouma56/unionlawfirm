@@ -325,15 +325,10 @@ function App() {
   );
 
   const renderLogin = () => {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState('');
-
     const handleSubmit = async (e) => {
       e.preventDefault();
-      setLoading(true);
-      setError('');
+      setLoginLoading(true);
+      setLoginError('');
 
       try {
         const response = await fetch(`${API_URL}/api/auth/login`, {
@@ -341,7 +336,7 @@ function App() {
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({ email, password }),
+          body: JSON.stringify({ email: loginEmail, password: loginPassword }),
         });
 
         const data = await response.json();
@@ -353,12 +348,12 @@ function App() {
           setIsAuthenticated(true);
           setCurrentPage('dashboard');
         } else {
-          setError(data.detail || 'Login failed');
+          setLoginError(data.detail || 'Login failed');
         }
       } catch (error) {
-        setError('Network error. Please try again.');
+        setLoginError('Network error. Please try again.');
       } finally {
-        setLoading(false);
+        setLoginLoading(false);
       }
     };
 
@@ -371,9 +366,9 @@ function App() {
             </h2>
           </div>
           <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
-            {error && (
+            {loginError && (
               <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
-                {error}
+                {loginError}
               </div>
             )}
             <div className="rounded-md shadow-sm -space-y-px">
@@ -383,8 +378,8 @@ function App() {
                   required
                   className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 focus:z-10 sm:text-sm"
                   placeholder="Email address"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  value={loginEmail}
+                  onChange={(e) => setLoginEmail(e.target.value)}
                 />
               </div>
               <div>
@@ -393,8 +388,8 @@ function App() {
                   required
                   className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 focus:z-10 sm:text-sm"
                   placeholder="Password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
+                  value={loginPassword}
+                  onChange={(e) => setLoginPassword(e.target.value)}
                 />
               </div>
             </div>
@@ -402,10 +397,10 @@ function App() {
             <div>
               <button
                 type="submit"
-                disabled={loading}
+                disabled={loginLoading}
                 className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-gradient-to-r from-yellow-400 to-yellow-600 hover:from-yellow-500 hover:to-yellow-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500 disabled:opacity-50"
               >
-                {loading ? 'Signing in...' : 'Sign in'}
+                {loginLoading ? 'Signing in...' : 'Sign in'}
               </button>
             </div>
 
