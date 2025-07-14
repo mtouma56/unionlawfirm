@@ -83,8 +83,17 @@ function App() {
     return flags[i18n.language] || '🇺🇸';
   };
 
-  // Close menus when clicking outside
+  // Close mobile menu on window resize
   useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768) {
+        setShowMobileMenu(false);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
     const handleClickOutside = (event) => {
       if (showLanguageMenu && !event.target.closest('.language-menu')) {
         setShowLanguageMenu(false);
