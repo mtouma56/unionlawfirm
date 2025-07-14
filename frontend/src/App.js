@@ -92,6 +92,8 @@ function App() {
       fetchAdminData();
     }
   }, [currentPage, user]);
+
+  const fetchAdminData = async () => {
     setAdminLoading(true);
     try {
       const casesResponse = await fetch(`${API_URL}/api/admin/cases`, {
