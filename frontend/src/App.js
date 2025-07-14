@@ -933,6 +933,8 @@ function App() {
           </div>
         </div>
       </div>
+      
+      {renderFooter()}
     </div>
   );
 
