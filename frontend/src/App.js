@@ -106,7 +106,11 @@ function App() {
     }
   };
 
-  const fetchDashboardData = async () => {
+  useEffect(() => {
+    if (currentPage === 'dashboard' && isAuthenticated) {
+      fetchDashboardData();
+    }
+  }, [currentPage, isAuthenticated]);
     setDashboardLoading(true);
     try {
       const [casesResponse, appointmentsResponse] = await Promise.all([
