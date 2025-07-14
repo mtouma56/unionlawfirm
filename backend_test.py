@@ -11,6 +11,8 @@ class LawFirmAPITester:
     def __init__(self, base_url="https://ed9f5287-426d-4518-9c48-1cea9ac72e3b.preview.emergentagent.com"):
         self.base_url = base_url
         self.token = None
+        self.admin_token = None
+        self.admin_user = None
         self.user_id = None
         self.tests_run = 0
         self.tests_passed = 0
