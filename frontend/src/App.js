@@ -43,6 +43,11 @@ function App() {
   const [bookingSuccess, setBookingSuccess] = useState(false);
   const [bookingError, setBookingError] = useState('');
   
+  // Dashboard state
+  const [cases, setCases] = useState([]);
+  const [appointments, setAppointments] = useState([]);
+  const [dashboardLoading, setDashboardLoading] = useState(true);
+  
   // Admin dashboard state
   const [adminCases, setAdminCases] = useState([]);
   const [adminUsers, setAdminUsers] = useState([]);
