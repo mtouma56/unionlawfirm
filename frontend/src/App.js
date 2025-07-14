@@ -209,7 +209,7 @@ function App() {
                   </button>
                   {user?.role === 'admin' && (
                     <button
-                      onClick={() => setCurrentPage('admin')}
+                      onClick={() => navigateToPage('admin')}
                       className={`px-3 py-2 rounded-md text-sm font-medium ${
                         currentPage === 'admin' 
                           ? 'bg-yellow-100 text-yellow-800' 
