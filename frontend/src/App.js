@@ -1137,6 +1137,8 @@ function App() {
             </div>
           </form>
         </div>
+        
+        {renderFooter()}
       </div>
     );
   };
