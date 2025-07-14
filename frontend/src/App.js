@@ -1032,6 +1032,244 @@ function App() {
     );
   };
 
+  const renderAdmin = () => {
+    if (user?.role !== 'admin') {
+      return (
+        <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+          <div className="text-center">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Access Denied</h2>
+            <p className="text-gray-600">You don't have permission to access this page.</p>
+          </div>
+        </div>
+      );
+    }
+
+    if (adminLoading) {
+      return (
+        <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+          <div className="text-center">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-yellow-600 mx-auto mb-4"></div>
+            <p className="text-gray-600">Loading admin dashboard...</p>
+          </div>
+        </div>
+      );
+    }
+
+    return (
+      <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-8">
+            <h1 className="text-3xl font-bold text-gray-900">Admin Dashboard</h1>
+            <p className="text-gray-600 mt-2">Manage cases, users, and appointments</p>
+          </div>
+
+          {/* Statistics Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <div className="bg-white rounded-lg shadow-lg p-6">
+              <div className="flex items-center">
+                <div className="p-3 rounded-full bg-yellow-100 text-yellow-600">
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+                </div>
+                <div className="ml-4">
+                  <p className="text-2xl font-bold text-gray-900">{adminCases.length}</p>
+                  <p className="text-gray-600">Total Cases</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-lg p-6">
+              <div className="flex items-center">
+                <div className="p-3 rounded-full bg-green-100 text-green-600">
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <div className="ml-4">
+                  <p className="text-2xl font-bold text-gray-900">
+                    {adminCases.filter(c => c.status === 'pending').length}
+                  </p>
+                  <p className="text-gray-600">Pending Cases</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-lg p-6">
+              <div className="flex items-center">
+                <div className="p-3 rounded-full bg-blue-100 text-blue-600">
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z" />
+                  </svg>
+                </div>
+                <div className="ml-4">
+                  <p className="text-2xl font-bold text-gray-900">
+                    {adminCases.filter(c => c.status === 'in_progress').length}
+                  </p>
+                  <p className="text-gray-600">Active Cases</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Cases Table */}
+          <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+            <div className="px-6 py-4 border-b border-gray-200">
+              <h2 className="text-lg font-semibold text-gray-900">All Cases</h2>
+            </div>
+            <div className="overflow-x-auto">
+              <table className="min-w-full divide-y divide-gray-200">
+                <thead className="bg-gray-50">
+                  <tr>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      Case
+                    </th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      Client
+                    </th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      Type
+                    </th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      Status
+                    </th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      Created
+                    </th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      Actions
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="bg-white divide-y divide-gray-200">
+                  {adminCases.map((case_item) => (
+                    <tr key={case_item.id} className="hover:bg-gray-50">
+                      <td className="px-6 py-4 whitespace-nowrap">
+                        <div className="text-sm font-medium text-gray-900">{case_item.title}</div>
+                        <div className="text-sm text-gray-500">{case_item.description.substring(0, 50)}...</div>
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap">
+                        <div className="text-sm text-gray-900">{case_item.user_name}</div>
+                        <div className="text-sm text-gray-500">{case_item.user_email}</div>
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap">
+                        <span className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-blue-100 text-blue-800">
+                          {case_item.case_type}
+                        </span>
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap">
+                        <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${
+                          case_item.status === 'pending' ? 'bg-yellow-100 text-yellow-800' :
+                          case_item.status === 'under_review' ? 'bg-blue-100 text-blue-800' :
+                          case_item.status === 'in_progress' ? 'bg-green-100 text-green-800' :
+                          case_item.status === 'completed' ? 'bg-gray-100 text-gray-800' :
+                          'bg-red-100 text-red-800'
+                        }`}>
+                          {case_item.status.replace('_', ' ')}
+                        </span>
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                        {new Date(case_item.created_at).toLocaleDateString()}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                        <button
+                          onClick={() => {
+                            setSelectedCase(case_item);
+                            setShowCaseModal(true);
+                          }}
+                          className="text-yellow-600 hover:text-yellow-900 mr-3"
+                        >
+                          View
+                        </button>
+                        <button
+                          onClick={() => updateCaseStatus(case_item.id, 'under_review')}
+                          className="text-blue-600 hover:text-blue-900"
+                        >
+                          Review
+                        </button>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          {/* Case Modal */}
+          {showCaseModal && selectedCase && (
+            <div className="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full z-50">
+              <div className="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white">
+                <div className="mt-3">
+                  <h3 className="text-lg font-medium text-gray-900 mb-4">Case Details</h3>
+                  <div className="space-y-3">
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700">Title</label>
+                      <p className="text-sm text-gray-900">{selectedCase.title}</p>
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700">Client</label>
+                      <p className="text-sm text-gray-900">{selectedCase.user_name}</p>
+                      <p className="text-sm text-gray-500">{selectedCase.user_email}</p>
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700">Type</label>
+                      <p className="text-sm text-gray-900">{selectedCase.case_type}</p>
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700">Description</label>
+                      <p className="text-sm text-gray-900">{selectedCase.description}</p>
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700">Files</label>
+                      <p className="text-sm text-gray-900">{selectedCase.files.length} files attached</p>
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700">Update Status</label>
+                      <div className="mt-2 space-y-2">
+                        <button
+                          onClick={() => updateCaseStatus(selectedCase.id, 'under_review')}
+                          className="w-full text-left px-3 py-2 text-sm bg-blue-100 text-blue-800 rounded hover:bg-blue-200"
+                        >
+                          Under Review
+                        </button>
+                        <button
+                          onClick={() => updateCaseStatus(selectedCase.id, 'in_progress')}
+                          className="w-full text-left px-3 py-2 text-sm bg-green-100 text-green-800 rounded hover:bg-green-200"
+                        >
+                          In Progress
+                        </button>
+                        <button
+                          onClick={() => updateCaseStatus(selectedCase.id, 'completed')}
+                          className="w-full text-left px-3 py-2 text-sm bg-gray-100 text-gray-800 rounded hover:bg-gray-200"
+                        >
+                          Completed
+                        </button>
+                        <button
+                          onClick={() => updateCaseStatus(selectedCase.id, 'rejected')}
+                          className="w-full text-left px-3 py-2 text-sm bg-red-100 text-red-800 rounded hover:bg-red-200"
+                        >
+                          Rejected
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="mt-6 flex justify-end">
+                    <button
+                      onClick={() => setShowCaseModal(false)}
+                      className="bg-gray-300 text-gray-700 px-4 py-2 rounded hover:bg-gray-400"
+                    >
+                      Close
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+    );
+  };
+
   const renderVideos = () => {
     return (
       <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
