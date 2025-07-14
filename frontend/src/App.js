@@ -262,6 +262,7 @@ function App() {
     <nav className="bg-white shadow-lg fixed w-full top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
+          {/* Logo */}
           <div className="flex items-center">
             <div className="flex-shrink-0 flex items-center">
               <div className="w-8 h-8 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center">
@@ -271,6 +272,7 @@ function App() {
             </div>
           </div>
           
+          {/* Desktop Navigation */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
               <button
@@ -365,7 +367,7 @@ function App() {
                 </>
               )}
               
-              {/* Language Selector */}
+              {/* Desktop Language Selector */}
               <div className="relative language-menu">
                 <button
                   onClick={() => setShowLanguageMenu(!showLanguageMenu)}
@@ -408,7 +410,191 @@ function App() {
               </div>
             </div>
           </div>
+
+          {/* Mobile menu button and language selector */}
+          <div className="md:hidden flex items-center space-x-2">
+            {/* Mobile Language Selector */}
+            <div className="relative language-menu">
+              <button
+                onClick={() => setShowLanguageMenu(!showLanguageMenu)}
+                className="flex items-center justify-center w-10 h-10 rounded-md text-gray-700 hover:text-yellow-600 hover:bg-gray-100 transition-colors"
+              >
+                <span className="text-lg">{getCurrentLanguageFlag()}</span>
+              </button>
+              
+              {showLanguageMenu && (
+                <div className="absolute right-0 mt-2 w-40 bg-white border border-gray-200 rounded-md shadow-lg z-20">
+                  <div className="py-1">
+                    <button
+                      onClick={() => changeLanguage('en')}
+                      className="flex items-center w-full px-3 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    >
+                      <span className="mr-2">🇺🇸</span>
+                      English
+                    </button>
+                    <button
+                      onClick={() => changeLanguage('fr')}
+                      className="flex items-center w-full px-3 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    >
+                      <span className="mr-2">🇫🇷</span>
+                      Français
+                    </button>
+                    <button
+                      onClick={() => changeLanguage('ar')}
+                      className="flex items-center w-full px-3 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    >
+                      <span className="mr-2">🇱🇧</span>
+                      العربية
+                    </button>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Mobile hamburger menu */}
+            <div className="mobile-menu">
+              <button
+                onClick={() => setShowMobileMenu(!showMobileMenu)}
+                className="flex items-center justify-center w-10 h-10 rounded-md text-gray-700 hover:text-yellow-600 hover:bg-gray-100 transition-colors"
+              >
+                <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  {showMobileMenu ? (
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  ) : (
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                  )}
+                </svg>
+              </button>
+            </div>
+          </div>
         </div>
+
+        {/* Mobile Navigation Menu */}
+        {showMobileMenu && (
+          <div className="md:hidden mobile-menu">
+            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-gray-200">
+              <button
+                onClick={() => {
+                  navigateToPage('home');
+                  setShowMobileMenu(false);
+                }}
+                className={`block w-full text-left px-3 py-2 rounded-md text-base font-medium ${
+                  currentPage === 'home' 
+                    ? 'bg-yellow-100 text-yellow-800' 
+                    : 'text-gray-700 hover:text-yellow-600 hover:bg-gray-50'
+                }`}
+              >
+                {t('nav.home')}
+              </button>
+              <button
+                onClick={() => {
+                  navigateToPage('videos');
+                  setShowMobileMenu(false);
+                }}
+                className={`block w-full text-left px-3 py-2 rounded-md text-base font-medium ${
+                  currentPage === 'videos' 
+                    ? 'bg-yellow-100 text-yellow-800' 
+                    : 'text-gray-700 hover:text-yellow-600 hover:bg-gray-50'
+                }`}
+              >
+                {t('nav.videos')}
+              </button>
+              
+              {isAuthenticated ? (
+                <>
+                  <button
+                    onClick={() => {
+                      navigateToPage('submit-case');
+                      setShowMobileMenu(false);
+                    }}
+                    className={`block w-full text-left px-3 py-2 rounded-md text-base font-medium ${
+                      currentPage === 'submit-case' 
+                        ? 'bg-yellow-100 text-yellow-800' 
+                        : 'text-gray-700 hover:text-yellow-600 hover:bg-gray-50'
+                    }`}
+                  >
+                    {t('nav.submitCase')}
+                  </button>
+                  <button
+                    onClick={() => {
+                      navigateToPage('booking');
+                      setShowMobileMenu(false);
+                    }}
+                    className={`block w-full text-left px-3 py-2 rounded-md text-base font-medium ${
+                      currentPage === 'booking' 
+                        ? 'bg-yellow-100 text-yellow-800' 
+                        : 'text-gray-700 hover:text-yellow-600 hover:bg-gray-50'
+                    }`}
+                  >
+                    {t('nav.booking')}
+                  </button>
+                  <button
+                    onClick={() => {
+                      navigateToPage('dashboard');
+                      setShowMobileMenu(false);
+                    }}
+                    className={`block w-full text-left px-3 py-2 rounded-md text-base font-medium ${
+                      currentPage === 'dashboard' 
+                        ? 'bg-yellow-100 text-yellow-800' 
+                        : 'text-gray-700 hover:text-yellow-600 hover:bg-gray-50'
+                    }`}
+                  >
+                    {t('nav.dashboard')}
+                  </button>
+                  {user?.role === 'admin' && (
+                    <button
+                      onClick={() => {
+                        navigateToPage('admin');
+                        setShowMobileMenu(false);
+                      }}
+                      className={`block w-full text-left px-3 py-2 rounded-md text-base font-medium ${
+                        currentPage === 'admin' 
+                          ? 'bg-yellow-100 text-yellow-800' 
+                          : 'text-gray-700 hover:text-yellow-600 hover:bg-gray-50'
+                      }`}
+                    >
+                      {t('nav.admin')}
+                    </button>
+                  )}
+                  <button
+                    onClick={() => {
+                      logout();
+                      setShowMobileMenu(false);
+                    }}
+                    className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-red-600 hover:text-red-800 hover:bg-red-50"
+                  >
+                    {t('nav.logout')}
+                  </button>
+                </>
+              ) : (
+                <>
+                  <button
+                    onClick={() => {
+                      navigateToPage('login');
+                      setShowMobileMenu(false);
+                    }}
+                    className={`block w-full text-left px-3 py-2 rounded-md text-base font-medium ${
+                      currentPage === 'login' 
+                        ? 'bg-yellow-100 text-yellow-800' 
+                        : 'text-gray-700 hover:text-yellow-600 hover:bg-gray-50'
+                    }`}
+                  >
+                    {t('nav.login')}
+                  </button>
+                  <button
+                    onClick={() => {
+                      navigateToPage('register');
+                      setShowMobileMenu(false);
+                    }}
+                    className="block w-full text-left mt-2 bg-gradient-to-r from-yellow-400 to-yellow-600 text-white px-3 py-2 rounded-md text-base font-medium hover:from-yellow-500 hover:to-yellow-700 transition-all duration-200"
+                  >
+                    {t('nav.register')}
+                  </button>
+                </>
+              )}
+            </div>
+          </div>
+        )}
       </div>
     </nav>
   );
