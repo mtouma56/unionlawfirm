@@ -675,10 +675,6 @@ function App() {
   };
 
   const renderDashboard = () => {
-    const [cases, setCases] = useState([]);
-    const [appointments, setAppointments] = useState([]);
-    const [loading, setLoading] = useState(true);
-
     useEffect(() => {
       fetchUserData();
     }, []);
