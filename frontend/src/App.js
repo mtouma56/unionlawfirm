@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import './App.css';
+import './i18n';
 
 const API_URL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:8001';
 
 function App() {
+  const { t, i18n } = useTranslation();
   const [currentPage, setCurrentPage] = useState('home');
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [user, setUser] = useState(null);
