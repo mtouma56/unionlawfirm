@@ -87,7 +87,11 @@ function App() {
     }
   };
 
-  const fetchAdminData = async () => {
+  useEffect(() => {
+    if (currentPage === 'admin' && user?.role === 'admin') {
+      fetchAdminData();
+    }
+  }, [currentPage, user]);
     setAdminLoading(true);
     try {
       const casesResponse = await fetch(`${API_URL}/api/admin/cases`, {
