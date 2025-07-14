@@ -62,10 +62,49 @@ function App() {
   }, [token]);
 
   useEffect(() => {
-    if (currentPage === 'dashboard' && isAuthenticated) {
-      fetchDashboardData();
+    if (currentPage === 'admin' && user?.role === 'admin') {
+      fetchAdminData();
     }
-  }, [currentPage, isAuthenticated]);
+  }, [currentPage, user]);
+
+  const fetchAdminData = async () => {
+    setAdminLoading(true);
+    try {
+      const casesResponse = await fetch(`${API_URL}/api/admin/cases`, {
+        headers: { 'Authorization': `Bearer ${token}` }
+      });
+
+      if (casesResponse.ok) {
+        const casesData = await casesResponse.json();
+        setAdminCases(casesData);
+      }
+    } catch (error) {
+      console.error('Error fetching admin data:', error);
+    } finally {
+      setAdminLoading(false);
+    }
+  };
+
+  const updateCaseStatus = async (caseId, newStatus) => {
+    try {
+      const response = await fetch(`${API_URL}/api/admin/cases/${caseId}/status`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
+        },
+        body: JSON.stringify({ status: newStatus })
+      });
+
+      if (response.ok) {
+        // Refresh admin data
+        fetchAdminData();
+        setShowCaseModal(false);
+      }
+    } catch (error) {
+      console.error('Error updating case status:', error);
+    }
+  };
 
   const fetchDashboardData = async () => {
     setDashboardLoading(true);
