@@ -263,7 +263,7 @@ function App() {
                     : 'text-gray-700 hover:text-yellow-600'
                 }`}
               >
-                Home
+                {t('nav.home')}
               </button>
               <button
                 onClick={() => navigateToPage('videos')}
@@ -273,7 +273,7 @@ function App() {
                     : 'text-gray-700 hover:text-yellow-600'
                 }`}
               >
-                Legal Videos
+                {t('nav.videos')}
               </button>
               {isAuthenticated ? (
                 <>
@@ -285,7 +285,7 @@ function App() {
                         : 'text-gray-700 hover:text-yellow-600'
                     }`}
                   >
-                    Submit Case
+                    {t('nav.submitCase')}
                   </button>
                   <button
                     onClick={() => navigateToPage('booking')}
@@ -295,7 +295,7 @@ function App() {
                         : 'text-gray-700 hover:text-yellow-600'
                     }`}
                   >
-                    Book Appointment
+                    {t('nav.booking')}
                   </button>
                   <button
                     onClick={() => navigateToPage('dashboard')}
@@ -305,7 +305,7 @@ function App() {
                         : 'text-gray-700 hover:text-yellow-600'
                     }`}
                   >
-                    Dashboard
+                    {t('nav.dashboard')}
                   </button>
                   {user?.role === 'admin' && (
                     <button
@@ -316,14 +316,14 @@ function App() {
                           : 'text-gray-700 hover:text-yellow-600'
                       }`}
                     >
-                      Admin
+                      {t('nav.admin')}
                     </button>
                   )}
                   <button
                     onClick={logout}
                     className="px-3 py-2 rounded-md text-sm font-medium text-red-600 hover:text-red-800"
                   >
-                    Logout
+                    {t('nav.logout')}
                   </button>
                 </>
               ) : (
@@ -336,16 +336,58 @@ function App() {
                         : 'text-gray-700 hover:text-yellow-600'
                     }`}
                   >
-                    Login
+                    {t('nav.login')}
                   </button>
                   <button
                     onClick={() => navigateToPage('register')}
                     className="bg-gradient-to-r from-yellow-400 to-yellow-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:from-yellow-500 hover:to-yellow-700 transition-all duration-200"
                   >
-                    Register
+                    {t('nav.register')}
                   </button>
                 </>
               )}
+              
+              {/* Language Selector */}
+              <div className="relative">
+                <button
+                  onClick={() => setShowLanguageMenu(!showLanguageMenu)}
+                  className="flex items-center px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-yellow-600"
+                >
+                  <span className="mr-2">{getCurrentLanguageFlag()}</span>
+                  <span className="hidden sm:inline">{i18n.language.toUpperCase()}</span>
+                  <svg className="ml-1 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                
+                {showLanguageMenu && (
+                  <div className="absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-md shadow-lg z-10">
+                    <div className="py-1">
+                      <button
+                        onClick={() => changeLanguage('en')}
+                        className="flex items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      >
+                        <span className="mr-3">🇺🇸</span>
+                        English
+                      </button>
+                      <button
+                        onClick={() => changeLanguage('fr')}
+                        className="flex items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      >
+                        <span className="mr-3">🇫🇷</span>
+                        Français
+                      </button>
+                      <button
+                        onClick={() => changeLanguage('ar')}
+                        className="flex items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      >
+                        <span className="mr-3">🇱🇧</span>
+                        العربية
+                      </button>
+                    </div>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         </div>
