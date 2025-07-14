@@ -1271,6 +1271,40 @@ function App() {
   };
 
   const renderVideos = () => {
+    const [videos, setVideos] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [selectedCategory, setSelectedCategory] = useState('all');
+
+    useEffect(() => {
+      fetchVideos();
+    }, []);
+
+    const fetchVideos = async () => {
+      try {
+        const response = await fetch(`${API_URL}/api/videos`);
+        if (response.ok) {
+          const data = await response.json();
+          setVideos(data);
+        }
+      } catch (error) {
+        console.error('Error fetching videos:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    const categories = [
+      { id: 'all', name: 'All Videos', icon: '🎬' },
+      { id: 'divorce', name: 'Divorce Law', icon: '⚖️' },
+      { id: 'inheritance', name: 'Inheritance', icon: '🏛️' },
+      { id: 'custody', name: 'Child Custody', icon: '👨‍👩‍👧‍👦' },
+      { id: 'alimony', name: 'Alimony', icon: '💼' }
+    ];
+
+    const filteredVideos = selectedCategory === 'all' 
+      ? videos 
+      : videos.filter(video => video.category === selectedCategory);
+
     return (
       <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
@@ -1279,27 +1313,83 @@ function App() {
               Legal Education Videos
             </h1>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Learn about common family law cases and procedures
+              Learn about common family law cases and procedures with our educational content
             </p>
           </div>
 
-          <div className="text-center py-16">
-            <div className="bg-white rounded-lg shadow-lg p-8 max-w-md mx-auto">
-              <div className="text-6xl mb-4">🎬</div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                Video Library Coming Soon
-              </h3>
-              <p className="text-gray-600 mb-4">
-                We're preparing educational videos about family law topics including divorce procedures, inheritance rights, and custody matters.
-              </p>
+          {/* Category Filter */}
+          <div className="flex flex-wrap justify-center gap-4 mb-8">
+            {categories.map((category) => (
               <button
-                onClick={() => setCurrentPage(isAuthenticated ? 'submit-case' : 'register')}
-                className="bg-gradient-to-r from-yellow-400 to-yellow-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-yellow-500 hover:to-yellow-700 transition-all duration-200"
+                key={category.id}
+                onClick={() => setSelectedCategory(category.id)}
+                className={`px-4 py-2 rounded-full font-medium transition-all duration-200 ${
+                  selectedCategory === category.id
+                    ? 'bg-gradient-to-r from-yellow-400 to-yellow-600 text-white shadow-lg'
+                    : 'bg-white text-gray-700 hover:bg-gray-100 shadow-md'
+                }`}
               >
-                Submit a Case Instead
+                <span className="mr-2">{category.icon}</span>
+                {category.name}
               </button>
-            </div>
+            ))}
           </div>
+
+          {loading ? (
+            <div className="text-center py-16">
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-yellow-600 mx-auto mb-4"></div>
+              <p className="text-gray-600">Loading videos...</p>
+            </div>
+          ) : videos.length === 0 ? (
+            <div className="text-center py-16">
+              <div className="bg-white rounded-lg shadow-lg p-8 max-w-md mx-auto">
+                <div className="text-6xl mb-4">🎬</div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                  Video Library Coming Soon
+                </h3>
+                <p className="text-gray-600 mb-4">
+                  We're preparing educational videos about family law topics including divorce procedures, inheritance rights, and custody matters.
+                </p>
+                <div className="space-y-2 text-sm text-gray-500">
+                  <p>• Divorce proceedings and procedures</p>
+                  <p>• Inheritance law and estate planning</p>
+                  <p>• Child custody and support guidelines</p>
+                  <p>• Alimony and financial arrangements</p>
+                </div>
+                <button
+                  onClick={() => navigateToPage(isAuthenticated ? 'submit-case' : 'register')}
+                  className="mt-6 bg-gradient-to-r from-yellow-400 to-yellow-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-yellow-500 hover:to-yellow-700 transition-all duration-200"
+                >
+                  Submit a Case Instead
+                </button>
+              </div>
+            </div>
+          ) : (
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {filteredVideos.map((video) => (
+                <div key={video.id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                  <div className="h-48 bg-gradient-to-br from-yellow-100 to-yellow-200 flex items-center justify-center">
+                    <img 
+                      src={video.thumbnail_url} 
+                      alt={video.title}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">{video.title}</h3>
+                    <p className="text-gray-600 mb-4">{video.description}</p>
+                    <div className="flex items-center justify-between text-sm text-gray-500">
+                      <span>{video.duration} minutes</span>
+                      <span>{video.views} views</span>
+                    </div>
+                    <button className="mt-4 w-full bg-gradient-to-r from-yellow-400 to-yellow-600 text-white py-2 px-4 rounded-lg font-semibold hover:from-yellow-500 hover:to-yellow-700 transition-all duration-200">
+                      Watch Video
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </div>
     );
