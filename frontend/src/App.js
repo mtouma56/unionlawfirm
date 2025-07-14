@@ -94,6 +94,8 @@ function App() {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
+
+  useEffect(() => {
     const handleClickOutside = (event) => {
       if (showLanguageMenu && !event.target.closest('.language-menu')) {
         setShowLanguageMenu(false);
