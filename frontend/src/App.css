@@ -2,6 +2,121 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+/* Mobile Navigation Optimizations */
+.mobile-menu {
+  transition: all 0.3s ease;
+}
+
+.mobile-menu button {
+  transition: all 0.2s ease;
+}
+
+.mobile-menu button:hover {
+  background-color: #f3f4f6;
+}
+
+/* Mobile Language Selector */
+.language-menu button {
+  transition: all 0.2s ease;
+}
+
+.language-menu button:hover {
+  background-color: #f3f4f6;
+  transform: scale(1.05);
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 768px) {
+  .mobile-nav {
+    display: block;
+  }
+  
+  .desktop-nav {
+    display: none;
+  }
+  
+  /* Mobile language selector specific styles */
+  .language-menu .absolute {
+    right: 0;
+    left: auto;
+    transform: none;
+  }
+  
+  /* Mobile menu animations */
+  .mobile-menu-enter {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  
+  .mobile-menu-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  
+  /* Touch-friendly button sizing */
+  .mobile-menu button {
+    min-height: 44px;
+    padding: 12px;
+  }
+  
+  /* RTL adjustments for mobile */
+  [dir="rtl"] .mobile-menu button {
+    text-align: right;
+  }
+  
+  [dir="rtl"] .language-menu .absolute {
+    right: auto;
+    left: 0;
+  }
+}
+
+/* Tablet breakpoint */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .language-menu span {
+    display: inline;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  .mobile-menu {
+    font-size: 14px;
+  }
+  
+  .language-menu .absolute {
+    width: 140px;
+    font-size: 14px;
+  }
+  
+  /* Logo adjustments for small screens */
+  .logo-text {
+    font-size: 18px;
+  }
+}
+
+/* Landscape mobile */
+@media (max-width: 896px) and (orientation: landscape) {
+  .mobile-menu {
+    max-height: 50vh;
+    overflow-y: auto;
+  }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2) {
+  .language-menu button {
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* Focus states for accessibility */
+.language-menu button:focus,
+.mobile-menu button:focus {
+  outline: 2px solid #fbbf24;
+  outline-offset: 2px;
+}
+
 /* RTL Support for Arabic */
 [dir="rtl"] {
   text-align: right;
