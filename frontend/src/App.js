@@ -423,36 +423,37 @@ function App() {
           </div>
 
           {/* Mobile menu button and language selector */}
-          <div className="md:hidden flex items-center space-x-2">
+          <div className="md:hidden flex items-center space-x-3">
             {/* Mobile Language Selector */}
             <div className="relative language-menu">
               <button
                 onClick={() => setShowLanguageMenu(!showLanguageMenu)}
-                className="flex items-center justify-center w-10 h-10 rounded-md text-gray-700 hover:text-yellow-600 hover:bg-gray-100 transition-colors"
+                className="flex items-center justify-center w-10 h-10 rounded-md text-gray-700 hover:text-yellow-600 hover:bg-gray-100 transition-colors border border-gray-300"
+                aria-label="Select Language"
               >
-                <span className="text-lg">{getCurrentLanguageFlag()}</span>
+                <span className="text-xl">{getCurrentLanguageFlag()}</span>
               </button>
               
               {showLanguageMenu && (
-                <div className="absolute right-0 mt-2 w-40 bg-white border border-gray-200 rounded-md shadow-lg z-20">
+                <div className="absolute right-0 mt-2 w-44 bg-white border border-gray-200 rounded-md shadow-lg z-30">
                   <div className="py-1">
                     <button
                       onClick={() => changeLanguage('en')}
-                      className="flex items-center w-full px-3 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      className={`flex items-center w-full px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 ${i18n.language === 'en' ? 'bg-yellow-50 text-yellow-800' : ''}`}
                     >
                       <span className="mr-2">🇺🇸</span>
                       English
                     </button>
                     <button
                       onClick={() => changeLanguage('fr')}
-                      className="flex items-center w-full px-3 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      className={`flex items-center w-full px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 ${i18n.language === 'fr' ? 'bg-yellow-50 text-yellow-800' : ''}`}
                     >
                       <span className="mr-2">🇫🇷</span>
                       Français
                     </button>
                     <button
                       onClick={() => changeLanguage('ar')}
-                      className="flex items-center w-full px-3 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      className={`flex items-center w-full px-3 py-2 text-sm text-gray-700 hover:bg-gray-100 ${i18n.language === 'ar' ? 'bg-yellow-50 text-yellow-800' : ''}`}
                     >
                       <span className="mr-2">🇱🇧</span>
                       العربية
@@ -466,7 +467,8 @@ function App() {
             <div className="mobile-menu">
               <button
                 onClick={() => setShowMobileMenu(!showMobileMenu)}
-                className="flex items-center justify-center w-10 h-10 rounded-md text-gray-700 hover:text-yellow-600 hover:bg-gray-100 transition-colors"
+                className="flex items-center justify-center w-10 h-10 rounded-md text-gray-700 hover:text-yellow-600 hover:bg-gray-100 transition-colors border border-gray-300"
+                aria-label="Open mobile menu"
               >
                 <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   {showMobileMenu ? (
