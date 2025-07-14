@@ -709,7 +709,7 @@ function App() {
               <p>Your case has been submitted and is now pending review. We'll contact you soon.</p>
             </div>
             <button
-              onClick={() => setCurrentPage('dashboard')}
+              onClick={() => navigateToPage('dashboard')}
               className="mt-4 bg-gradient-to-r from-yellow-400 to-yellow-600 text-white px-6 py-2 rounded-lg hover:from-yellow-500 hover:to-yellow-700 transition-all duration-200"
             >
               Go to Dashboard
