@@ -1297,28 +1297,6 @@ function App() {
   };
 
   const renderVideos = () => {
-    const [videos, setVideos] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [selectedCategory, setSelectedCategory] = useState('all');
-
-    useEffect(() => {
-      fetchVideos();
-    }, []);
-
-    const fetchVideos = async () => {
-      try {
-        const response = await fetch(`${API_URL}/api/videos`);
-        if (response.ok) {
-          const data = await response.json();
-          setVideos(data);
-        }
-      } catch (error) {
-        console.error('Error fetching videos:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
     const categories = [
       { id: 'all', name: 'All Videos', icon: '🎬' },
       { id: 'divorce', name: 'Divorce Law', icon: '⚖️' },
@@ -1361,7 +1339,7 @@ function App() {
             ))}
           </div>
 
-          {loading ? (
+          {videosLoading ? (
             <div className="text-center py-16">
               <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-yellow-600 mx-auto mb-4"></div>
               <p className="text-gray-600">Loading videos...</p>
