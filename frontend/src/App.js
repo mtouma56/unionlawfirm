@@ -178,7 +178,7 @@ function App() {
               {isAuthenticated ? (
                 <>
                   <button
-                    onClick={() => setCurrentPage('submit-case')}
+                    onClick={() => navigateToPage('submit-case')}
                     className={`px-3 py-2 rounded-md text-sm font-medium ${
                       currentPage === 'submit-case' 
                         ? 'bg-yellow-100 text-yellow-800' 
@@ -188,7 +188,7 @@ function App() {
                     Submit Case
                   </button>
                   <button
-                    onClick={() => setCurrentPage('booking')}
+                    onClick={() => navigateToPage('booking')}
                     className={`px-3 py-2 rounded-md text-sm font-medium ${
                       currentPage === 'booking' 
                         ? 'bg-yellow-100 text-yellow-800' 
@@ -198,7 +198,7 @@ function App() {
                     Book Appointment
                   </button>
                   <button
-                    onClick={() => setCurrentPage('dashboard')}
+                    onClick={() => navigateToPage('dashboard')}
                     className={`px-3 py-2 rounded-md text-sm font-medium ${
                       currentPage === 'dashboard' 
                         ? 'bg-yellow-100 text-yellow-800' 
