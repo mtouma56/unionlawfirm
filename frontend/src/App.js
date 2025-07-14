@@ -58,10 +58,24 @@ function App() {
   const [selectedCase, setSelectedCase] = useState(null);
   const [showCaseModal, setShowCaseModal] = useState(false);
   
-  // Videos state
-  const [videos, setVideos] = useState([]);
-  const [videosLoading, setVideosLoading] = useState(true);
-  const [selectedCategory, setSelectedCategory] = useState('all');
+  // Language state
+  const [showLanguageMenu, setShowLanguageMenu] = useState(false);
+  
+  // Set document direction based on language
+  useEffect(() => {
+    document.documentElement.dir = i18n.language === 'ar' ? 'rtl' : 'ltr';
+    document.documentElement.lang = i18n.language;
+  }, [i18n.language]);
+
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+    setShowLanguageMenu(false);
+  };
+
+  const getCurrentLanguageFlag = () => {
+    const flags = { en: '🇺🇸', fr: '🇫🇷', ar: '🇱🇧' };
+    return flags[i18n.language] || '🇺🇸';
+  };
 
   useEffect(() => {
     if (token) {
