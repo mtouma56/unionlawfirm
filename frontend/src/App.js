@@ -837,16 +837,10 @@ function App() {
   };
 
   const renderBooking = () => {
-    const [appointmentDate, setAppointmentDate] = useState('');
-    const [notes, setNotes] = useState('');
-    const [loading, setLoading] = useState(false);
-    const [success, setSuccess] = useState(false);
-    const [error, setError] = useState('');
-
     const handleSubmit = async (e) => {
       e.preventDefault();
-      setLoading(true);
-      setError('');
+      setBookingLoading(true);
+      setBookingError('');
 
       try {
         const response = await fetch(`${API_URL}/api/appointments`, {
@@ -857,27 +851,27 @@ function App() {
           },
           body: JSON.stringify({
             appointment_date: appointmentDate,
-            notes: notes
+            notes: appointmentNotes
           })
         });
 
         const data = await response.json();
 
         if (response.ok) {
-          setSuccess(true);
+          setBookingSuccess(true);
           setAppointmentDate('');
-          setNotes('');
+          setAppointmentNotes('');
         } else {
-          setError(data.detail || 'Failed to book appointment');
+          setBookingError(data.detail || 'Failed to book appointment');
         }
       } catch (error) {
-        setError('Network error. Please try again.');
+        setBookingError('Network error. Please try again.');
       } finally {
-        setLoading(false);
+        setBookingLoading(false);
       }
     };
 
-    if (success) {
+    if (bookingSuccess) {
       return (
         <div className="min-h-screen bg-gray-50 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
           <div className="max-w-md w-full text-center">
@@ -906,9 +900,9 @@ function App() {
             <h2 className="text-3xl font-bold text-gray-900 mb-8">Book a Consultation</h2>
             
             <form onSubmit={handleSubmit} className="space-y-6">
-              {error && (
+              {bookingError && (
                 <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
-                  {error}
+                  {bookingError}
                 </div>
               )}
 
@@ -932,8 +926,8 @@ function App() {
                 </label>
                 <textarea
                   rows={4}
-                  value={notes}
-                  onChange={(e) => setNotes(e.target.value)}
+                  value={appointmentNotes}
+                  onChange={(e) => setAppointmentNotes(e.target.value)}
                   className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-yellow-500 focus:border-yellow-500"
                   placeholder="Any specific topics you'd like to discuss..."
                 />
@@ -951,10 +945,10 @@ function App() {
               <div className="flex justify-end">
                 <button
                   type="submit"
-                  disabled={loading}
+                  disabled={bookingLoading}
                   className="bg-gradient-to-r from-yellow-400 to-yellow-600 text-white px-8 py-3 rounded-lg font-semibold hover:from-yellow-500 hover:to-yellow-700 disabled:opacity-50 transition-all duration-200"
                 >
-                  {loading ? 'Booking...' : 'Book Appointment'}
+                  {bookingLoading ? 'Booking...' : 'Book Appointment'}
                 </button>
               </div>
             </form>
