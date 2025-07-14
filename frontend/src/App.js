@@ -43,10 +43,12 @@ function App() {
   const [bookingSuccess, setBookingSuccess] = useState(false);
   const [bookingError, setBookingError] = useState('');
   
-  // Dashboard state
-  const [cases, setCases] = useState([]);
-  const [appointments, setAppointments] = useState([]);
-  const [dashboardLoading, setDashboardLoading] = useState(true);
+  // Admin dashboard state
+  const [adminCases, setAdminCases] = useState([]);
+  const [adminUsers, setAdminUsers] = useState([]);
+  const [adminLoading, setAdminLoading] = useState(true);
+  const [selectedCase, setSelectedCase] = useState(null);
+  const [showCaseModal, setShowCaseModal] = useState(false);
 
   useEffect(() => {
     if (token) {
