@@ -8,6 +8,45 @@ function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [user, setUser] = useState(null);
   const [token, setToken] = useState(localStorage.getItem('token'));
+  
+  // Login form state
+  const [loginEmail, setLoginEmail] = useState('');
+  const [loginPassword, setLoginPassword] = useState('');
+  const [loginLoading, setLoginLoading] = useState(false);
+  const [loginError, setLoginError] = useState('');
+  
+  // Register form state
+  const [registerFormData, setRegisterFormData] = useState({
+    email: '',
+    password: '',
+    name: '',
+    phone: ''
+  });
+  const [registerLoading, setRegisterLoading] = useState(false);
+  const [registerError, setRegisterError] = useState('');
+  
+  // Submit case form state
+  const [caseFormData, setCaseFormData] = useState({
+    case_type: 'divorce',
+    title: '',
+    description: ''
+  });
+  const [caseFiles, setCaseFiles] = useState([]);
+  const [caseLoading, setCaseLoading] = useState(false);
+  const [caseSuccess, setCaseSuccess] = useState(false);
+  const [caseError, setCaseError] = useState('');
+  
+  // Booking form state
+  const [appointmentDate, setAppointmentDate] = useState('');
+  const [appointmentNotes, setAppointmentNotes] = useState('');
+  const [bookingLoading, setBookingLoading] = useState(false);
+  const [bookingSuccess, setBookingSuccess] = useState(false);
+  const [bookingError, setBookingError] = useState('');
+  
+  // Dashboard state
+  const [cases, setCases] = useState([]);
+  const [appointments, setAppointments] = useState([]);
+  const [dashboardLoading, setDashboardLoading] = useState(true);
 
   useEffect(() => {
     if (token) {
