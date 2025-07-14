@@ -1,0 +1,198 @@
+{
+  "nav": {
+    "home": "الرئيسية",
+    "videos": "الفيديوهات القانونية",
+    "submitCase": "تقديم قضية",
+    "booking": "حجز موعد",
+    "dashboard": "لوحة التحكم",
+    "admin": "الإدارة",
+    "login": "تسجيل الدخول",
+    "register": "إنشاء حساب",
+    "logout": "تسجيل الخروج"
+  },
+  "hero": {
+    "title": "خبراء قانون",
+    "subtitle": "الأسرة",
+    "description": "متخصصون في قضايا الطلاق والميراث وحضانة الأطفال والنفقة. استشارات قانونية مهنية مع سنوات من الخبرة في قانون الأسرة اللبناني.",
+    "submitCase": "قدم قضيتك",
+    "watchVideos": "شاهد الفيديوهات القانونية"
+  },
+  "services": {
+    "title": "خدماتنا القانونية",
+    "description": "خدمات شاملة في قانون الأسرة مصممة خصيصاً لاحتياجاتك",
+    "divorce": {
+      "title": "إجراءات الطلاق",
+      "description": "دعم قانوني شامل للطلاق بما في ذلك تقسيم الأصول وترتيبات الحضانة"
+    },
+    "inheritance": {
+      "title": "قضايا الميراث",
+      "description": "إرشاد خبير في قانون الميراث وتوزيع التركة"
+    },
+    "custody": {
+      "title": "حضانة الأطفال",
+      "description": "حماية حقوقك الأبوية ومصلحة الطفل الفضلى"
+    },
+    "alimony": {
+      "title": "النفقة والإعالة",
+      "description": "ترتيبات دعم مالي عادلة وتعديلات"
+    },
+    "learnMore": "اعرف المزيد"
+  },
+  "cta": {
+    "title": "مستعد للبدء؟",
+    "description": "احجز استشارة أو قدم قضيتك اليوم. فريقنا المتمرس هنا لمساعدتك.",
+    "bookConsultation": "احجز استشارة",
+    "submitCase": "قدم قضية"
+  },
+  "auth": {
+    "signInTitle": "سجل الدخول إلى حسابك",
+    "createAccountTitle": "إنشاء حساب جديد",
+    "signIn": "تسجيل الدخول",
+    "signUp": "إنشاء حساب",
+    "signingIn": "جاري تسجيل الدخول...",
+    "creatingAccount": "جاري إنشاء الحساب...",
+    "emailAddress": "عنوان البريد الإلكتروني",
+    "password": "كلمة المرور",
+    "fullName": "الاسم الكامل",
+    "phoneNumber": "رقم الهاتف (اختياري)",
+    "noAccount": "ليس لديك حساب؟ سجل هنا",
+    "hasAccount": "لديك حساب؟ سجل الدخول هنا"
+  },
+  "dashboard": {
+    "welcome": "مرحباً بك، {{name}}!",
+    "subtitle": "إدارة قضاياك ومواعيدك",
+    "myCases": "قضاياي",
+    "myAppointments": "مواعيدي",
+    "submitNewCase": "تقديم قضية جديدة",
+    "bookAppointment": "حجز موعد",
+    "noCases": "لم يتم تقديم قضايا بعد",
+    "noAppointments": "لا توجد مواعيد محجوزة",
+    "submitFirstCase": "قدم قضيتك الأولى",
+    "bookFirstAppointment": "احجز موعدك الأول",
+    "loading": "جاري تحميل لوحة التحكم...",
+    "caseType": "النوع: {{type}}",
+    "files": "الملفات: {{count}}",
+    "amount": "المبلغ: {{amount}}$",
+    "payment": "الدفع: {{status}}",
+    "time": "الوقت: {{time}}"
+  },
+  "submitCase": {
+    "title": "تقديم قضيتك القانونية",
+    "caseType": "نوع القضية",
+    "caseTitle": "عنوان القضية",
+    "caseDescription": "وصف القضية",
+    "supportingDocuments": "المستندات المؤيدة",
+    "acceptedFormats": "الصيغ المقبولة: PDF، Word، Excel، الصور (JPG، PNG، GIF)",
+    "caseTitlePlaceholder": "عنوان مختصر لقضيتك",
+    "caseDescriptionPlaceholder": "وصف مفصل لقضيتك القانونية...",
+    "submitting": "جاري التقديم...",
+    "submit": "تقديم القضية",
+    "successTitle": "تم تقديم القضية بنجاح!",
+    "successMessage": "تم تقديم قضيتك وهي الآن في انتظار المراجعة. سنتواصل معك قريباً.",
+    "goToDashboard": "الذهاب إلى لوحة التحكم",
+    "types": {
+      "divorce": "طلاق",
+      "inheritance": "ميراث",
+      "custody": "حضانة الأطفال",
+      "alimony": "نفقة",
+      "other": "أخرى"
+    }
+  },
+  "booking": {
+    "title": "حجز استشارة",
+    "appointmentDateTime": "تاريخ ووقت الموعد",
+    "additionalNotes": "ملاحظات إضافية (اختياري)",
+    "notesPlaceholder": "أي مواضيع محددة تود مناقشتها...",
+    "consultationFee": "رسوم الاستشارة",
+    "feeDescription": "رسوم الاستشارة المعيارية: 100$\nسيتم معالجة الدفع بعد التأكيد.",
+    "booking": "جاري الحجز...",
+    "bookAppointment": "حجز موعد",
+    "successTitle": "تم حجز الموعد بنجاح!",
+    "successMessage": "تم جدولة موعدك. سيتم معالجة الدفع بشكل منفصل.",
+    "goToDashboard": "الذهاب إلى لوحة التحكم"
+  },
+  "admin": {
+    "title": "لوحة تحكم الإدارة",
+    "subtitle": "إدارة القضايا والمستخدمين والمواعيد",
+    "accessDenied": "تم رفض الوصول",
+    "noPermission": "ليس لديك صلاحية للوصول إلى هذه الصفحة.",
+    "loading": "جاري تحميل لوحة تحكم الإدارة...",
+    "totalCases": "إجمالي القضايا",
+    "pendingCases": "القضايا المعلقة",
+    "activeCases": "القضايا النشطة",
+    "allCases": "جميع القضايا",
+    "case": "القضية",
+    "client": "العميل",
+    "type": "النوع",
+    "status": "الحالة",
+    "created": "تاريخ الإنشاء",
+    "actions": "الإجراءات",
+    "view": "عرض",
+    "review": "مراجعة",
+    "caseDetails": "تفاصيل القضية",
+    "title": "العنوان",
+    "description": "الوصف",
+    "files": "الملفات",
+    "filesAttached": "{{count}} ملف مرفق",
+    "updateStatus": "تحديث الحالة",
+    "underReview": "قيد المراجعة",
+    "inProgress": "قيد التنفيذ",
+    "completed": "مكتملة",
+    "rejected": "مرفوضة",
+    "close": "إغلاق",
+    "statuses": {
+      "pending": "معلقة",
+      "under_review": "قيد المراجعة",
+      "in_progress": "قيد التنفيذ",
+      "completed": "مكتملة",
+      "rejected": "مرفوضة"
+    }
+  },
+  "videos": {
+    "title": "فيديوهات تعليمية قانونية",
+    "description": "تعلم عن القضايا الشائعة في قانون الأسرة والإجراءات مع محتوانا التعليمي",
+    "categories": {
+      "all": "جميع الفيديوهات",
+      "divorce": "قانون الطلاق",
+      "inheritance": "الميراث",
+      "custody": "حضانة الأطفال",
+      "alimony": "النفقة"
+    },
+    "loading": "جاري تحميل الفيديوهات...",
+    "comingSoon": "مكتبة الفيديو قريباً",
+    "comingSoonDescription": "نحن نعد فيديوهات تعليمية حول مواضيع قانون الأسرة بما في ذلك إجراءات الطلاق وحقوق الميراث ومسائل الحضانة.",
+    "topics": {
+      "divorce": "• إجراءات ومراحل الطلاق",
+      "inheritance": "• قانون الميراث والتخطيط للتركة",
+      "custody": "• حضانة الأطفال وإرشادات الدعم",
+      "alimony": "• النفقة والترتيبات المالية"
+    },
+    "submitCaseInstead": "قدم قضية بدلاً من ذلك",
+    "minutes": "{{duration}} دقيقة",
+    "views": "{{views}} مشاهدة",
+    "watchVideo": "شاهد الفيديو"
+  },
+  "common": {
+    "loading": "جاري التحميل...",
+    "error": "حدث خطأ. يرجى المحاولة مرة أخرى.",
+    "success": "نجح!",
+    "cancel": "إلغاء",
+    "save": "حفظ",
+    "edit": "تعديل",
+    "delete": "حذف",
+    "confirm": "تأكيد",
+    "back": "رجوع",
+    "next": "التالي",
+    "previous": "السابق",
+    "search": "بحث",
+    "filter": "تصفية",
+    "sort": "ترتيب",
+    "date": "التاريخ",
+    "name": "الاسم",
+    "email": "البريد الإلكتروني",
+    "phone": "الهاتف",
+    "address": "العنوان",
+    "required": "مطلوب",
+    "optional": "اختياري"
+  }
+}
