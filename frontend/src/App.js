@@ -83,11 +83,14 @@ function App() {
     return flags[i18n.language] || '🇺🇸';
   };
 
-  // Close language menu when clicking outside
+  // Close menus when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (showLanguageMenu && !event.target.closest('.language-menu')) {
         setShowLanguageMenu(false);
+      }
+      if (showMobileMenu && !event.target.closest('.mobile-menu')) {
+        setShowMobileMenu(false);
       }
     };
 
@@ -95,7 +98,7 @@ function App() {
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [showLanguageMenu]);
+  }, [showLanguageMenu, showMobileMenu]);
 
   useEffect(() => {
     if (token) {
