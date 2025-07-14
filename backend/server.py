@@ -455,11 +455,17 @@ async def get_all_cases(current_user: User = Depends(get_current_user)):
 @app.put("/api/admin/cases/{case_id}/status")
 async def update_case_status(
     case_id: str,
-    status: CaseStatus,
+    request: Request,
     current_user: User = Depends(get_current_user)
 ):
     if current_user.role != UserRole.ADMIN:
         raise HTTPException(status_code=403, detail="Admin access required")
+    
+    body = await request.json()
+    status = body.get("status")
+    
+    if status not in [s.value for s in CaseStatus]:
+        raise HTTPException(status_code=400, detail="Invalid status")
     
     result = await cases_collection.update_one(
         {"id": case_id},
