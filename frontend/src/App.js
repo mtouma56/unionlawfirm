@@ -229,7 +229,7 @@ function App() {
               ) : (
                 <>
                   <button
-                    onClick={() => setCurrentPage('login')}
+                    onClick={() => navigateToPage('login')}
                     className={`px-3 py-2 rounded-md text-sm font-medium ${
                       currentPage === 'login' 
                         ? 'bg-yellow-100 text-yellow-800' 
@@ -239,7 +239,7 @@ function App() {
                     Login
                   </button>
                   <button
-                    onClick={() => setCurrentPage('register')}
+                    onClick={() => navigateToPage('register')}
                     className="bg-gradient-to-r from-yellow-400 to-yellow-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:from-yellow-500 hover:to-yellow-700 transition-all duration-200"
                   >
                     Register
