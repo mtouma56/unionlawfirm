@@ -111,6 +111,8 @@ function App() {
       fetchDashboardData();
     }
   }, [currentPage, isAuthenticated]);
+
+  const fetchDashboardData = async () => {
     setDashboardLoading(true);
     try {
       const [casesResponse, appointmentsResponse] = await Promise.all([
