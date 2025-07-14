@@ -172,6 +172,44 @@
     "views": "{{views}} vues",
     "watchVideo": "Regarder la Vidéo"
   },
+  "footer": {
+    "contact": {
+      "title": "Informations de Contact",
+      "address": "123 Rue Juridique, Beyrouth, Liban",
+      "phone": "+961 1 234 567",
+      "email": "contact@unionlaw.com",
+      "hours": "Lun - Ven : 9h00 - 18h00"
+    },
+    "services": {
+      "title": "Nos Services",
+      "divorce": "Droit du Divorce",
+      "inheritance": "Affaires d'Héritage",
+      "custody": "Garde d'Enfants",
+      "alimony": "Pension Alimentaire",
+      "consultation": "Consultation Juridique"
+    },
+    "quickLinks": {
+      "title": "Liens Rapides",
+      "about": "À Propos",
+      "services": "Services",
+      "videos": "Vidéos Juridiques",
+      "contact": "Contact",
+      "privacy": "Politique de Confidentialité",
+      "terms": "Conditions d'Utilisation"
+    },
+    "social": {
+      "title": "Suivez-nous",
+      "facebook": "Facebook",
+      "linkedin": "LinkedIn",
+      "twitter": "Twitter",
+      "instagram": "Instagram"
+    },
+    "legal": {
+      "copyright": "© 2024 Union Law Firm. Tous droits réservés.",
+      "subtitle": "Services Juridiques Professionnels au Liban",
+      "licensed": "Autorisé à pratiquer le droit au Liban"
+    }
+  },
   "common": {
     "loading": "Chargement...",
     "error": "Une erreur s'est produite. Veuillez réessayer.",
