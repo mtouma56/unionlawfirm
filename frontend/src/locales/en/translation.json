@@ -172,6 +172,44 @@
     "views": "{{views}} views",
     "watchVideo": "Watch Video"
   },
+  "footer": {
+    "contact": {
+      "title": "Contact Information",
+      "address": "123 Legal Street, Beirut, Lebanon",
+      "phone": "+961 1 234 567",
+      "email": "contact@unionlaw.com",
+      "hours": "Mon - Fri: 9:00 AM - 6:00 PM"
+    },
+    "services": {
+      "title": "Our Services",
+      "divorce": "Divorce Law",
+      "inheritance": "Inheritance Cases",
+      "custody": "Child Custody",
+      "alimony": "Alimony & Support",
+      "consultation": "Legal Consultation"
+    },
+    "quickLinks": {
+      "title": "Quick Links",
+      "about": "About Us",
+      "services": "Services",
+      "videos": "Legal Videos",
+      "contact": "Contact",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service"
+    },
+    "social": {
+      "title": "Follow Us",
+      "facebook": "Facebook",
+      "linkedin": "LinkedIn",
+      "twitter": "Twitter",
+      "instagram": "Instagram"
+    },
+    "legal": {
+      "copyright": "© 2024 Union Law Firm. All rights reserved.",
+      "subtitle": "Professional Legal Services in Lebanon",
+      "licensed": "Licensed to practice law in Lebanon"
+    }
+  },
   "common": {
     "loading": "Loading...",
     "error": "An error occurred. Please try again.",
