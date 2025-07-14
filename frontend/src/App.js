@@ -115,6 +115,8 @@ function App() {
     setBookingSuccess(false);
     setCurrentPage(page);
   };
+
+  const logout = () => {
     localStorage.removeItem('token');
     setToken(null);
     setUser(null);
