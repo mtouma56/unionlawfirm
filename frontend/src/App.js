@@ -109,7 +109,12 @@ function App() {
     }
   };
 
-  const logout = () => {
+  const navigateToPage = (page) => {
+    // Reset success states when navigating
+    setCaseSuccess(false);
+    setBookingSuccess(false);
+    setCurrentPage(page);
+  };
     localStorage.removeItem('token');
     setToken(null);
     setUser(null);
