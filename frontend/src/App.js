@@ -362,7 +362,7 @@ function App() {
               )}
               
               {/* Language Selector */}
-              <div className="relative">
+              <div className="relative language-menu">
                 <button
                   onClick={() => setShowLanguageMenu(!showLanguageMenu)}
                   className="flex items-center px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-yellow-600"
