@@ -58,6 +58,11 @@ function App() {
   const [selectedCase, setSelectedCase] = useState(null);
   const [showCaseModal, setShowCaseModal] = useState(false);
   
+  // Videos state
+  const [videos, setVideos] = useState([]);
+  const [videosLoading, setVideosLoading] = useState(true);
+  const [selectedCategory, setSelectedCategory] = useState('all');
+
   // Language state
   const [showLanguageMenu, setShowLanguageMenu] = useState(false);
   
