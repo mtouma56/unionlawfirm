@@ -1,0 +1,198 @@
+{
+  "nav": {
+    "home": "Home",
+    "videos": "Legal Videos",
+    "submitCase": "Submit Case",
+    "booking": "Book Appointment",
+    "dashboard": "Dashboard",
+    "admin": "Admin",
+    "login": "Login",
+    "register": "Register",
+    "logout": "Logout"
+  },
+  "hero": {
+    "title": "Expert Family Law",
+    "subtitle": "Legal Services",
+    "description": "Specialized in divorce, inheritance, custody, and alimony cases. Professional legal counsel with years of experience in Lebanese family law.",
+    "submitCase": "Submit Your Case",
+    "watchVideos": "Watch Legal Videos"
+  },
+  "services": {
+    "title": "Our Legal Services",
+    "description": "Comprehensive family law services tailored to your specific needs",
+    "divorce": {
+      "title": "Divorce Proceedings",
+      "description": "Complete divorce legal support including asset division and custody arrangements"
+    },
+    "inheritance": {
+      "title": "Inheritance Cases",
+      "description": "Expert guidance on inheritance law and estate distribution"
+    },
+    "custody": {
+      "title": "Child Custody",
+      "description": "Protecting your parental rights and child's best interests"
+    },
+    "alimony": {
+      "title": "Alimony & Support",
+      "description": "Fair financial support arrangements and modifications"
+    },
+    "learnMore": "Learn More"
+  },
+  "cta": {
+    "title": "Ready to Get Started?",
+    "description": "Schedule a consultation or submit your case today. Our experienced team is here to help.",
+    "bookConsultation": "Book Consultation",
+    "submitCase": "Submit Case"
+  },
+  "auth": {
+    "signInTitle": "Sign in to your account",
+    "createAccountTitle": "Create your account",
+    "signIn": "Sign in",
+    "signUp": "Create Account",
+    "signingIn": "Signing in...",
+    "creatingAccount": "Creating account...",
+    "emailAddress": "Email address",
+    "password": "Password",
+    "fullName": "Full Name",
+    "phoneNumber": "Phone Number (optional)",
+    "noAccount": "Don't have an account? Register here",
+    "hasAccount": "Already have an account? Sign in here"
+  },
+  "dashboard": {
+    "welcome": "Welcome back, {{name}}!",
+    "subtitle": "Manage your cases and appointments",
+    "myCases": "My Cases",
+    "myAppointments": "My Appointments",
+    "submitNewCase": "Submit New Case",
+    "bookAppointment": "Book Appointment",
+    "noCases": "No cases submitted yet",
+    "noAppointments": "No appointments scheduled",
+    "submitFirstCase": "Submit your first case",
+    "bookFirstAppointment": "Book your first appointment",
+    "loading": "Loading your dashboard...",
+    "caseType": "Type: {{type}}",
+    "files": "Files: {{count}}",
+    "amount": "Amount: ${{amount}}",
+    "payment": "Payment: {{status}}",
+    "time": "Time: {{time}}"
+  },
+  "submitCase": {
+    "title": "Submit Your Legal Case",
+    "caseType": "Case Type",
+    "caseTitle": "Case Title",
+    "caseDescription": "Case Description",
+    "supportingDocuments": "Supporting Documents",
+    "acceptedFormats": "Accepted formats: PDF, Word, Excel, Images (JPG, PNG, GIF)",
+    "caseTitlePlaceholder": "Brief title for your case",
+    "caseDescriptionPlaceholder": "Detailed description of your legal case...",
+    "submitting": "Submitting...",
+    "submit": "Submit Case",
+    "successTitle": "Case Submitted Successfully!",
+    "successMessage": "Your case has been submitted and is now pending review. We'll contact you soon.",
+    "goToDashboard": "Go to Dashboard",
+    "types": {
+      "divorce": "Divorce",
+      "inheritance": "Inheritance",
+      "custody": "Child Custody",
+      "alimony": "Alimony",
+      "other": "Other"
+    }
+  },
+  "booking": {
+    "title": "Book a Consultation",
+    "appointmentDateTime": "Appointment Date & Time",
+    "additionalNotes": "Additional Notes (Optional)",
+    "notesPlaceholder": "Any specific topics you'd like to discuss...",
+    "consultationFee": "Consultation Fee",
+    "feeDescription": "Standard consultation fee: $100\nPayment will be processed after confirmation.",
+    "booking": "Booking...",
+    "bookAppointment": "Book Appointment",
+    "successTitle": "Appointment Booked Successfully!",
+    "successMessage": "Your appointment has been scheduled. Payment will be processed separately.",
+    "goToDashboard": "Go to Dashboard"
+  },
+  "admin": {
+    "title": "Admin Dashboard",
+    "subtitle": "Manage cases, users, and appointments",
+    "accessDenied": "Access Denied",
+    "noPermission": "You don't have permission to access this page.",
+    "loading": "Loading admin dashboard...",
+    "totalCases": "Total Cases",
+    "pendingCases": "Pending Cases",
+    "activeCases": "Active Cases",
+    "allCases": "All Cases",
+    "case": "Case",
+    "client": "Client",
+    "type": "Type",
+    "status": "Status",
+    "created": "Created",
+    "actions": "Actions",
+    "view": "View",
+    "review": "Review",
+    "caseDetails": "Case Details",
+    "title": "Title",
+    "description": "Description",
+    "files": "Files",
+    "filesAttached": "{{count}} files attached",
+    "updateStatus": "Update Status",
+    "underReview": "Under Review",
+    "inProgress": "In Progress",
+    "completed": "Completed",
+    "rejected": "Rejected",
+    "close": "Close",
+    "statuses": {
+      "pending": "pending",
+      "under_review": "under review",
+      "in_progress": "in progress",
+      "completed": "completed",
+      "rejected": "rejected"
+    }
+  },
+  "videos": {
+    "title": "Legal Education Videos",
+    "description": "Learn about common family law cases and procedures with our educational content",
+    "categories": {
+      "all": "All Videos",
+      "divorce": "Divorce Law",
+      "inheritance": "Inheritance", 
+      "custody": "Child Custody",
+      "alimony": "Alimony"
+    },
+    "loading": "Loading videos...",
+    "comingSoon": "Video Library Coming Soon",
+    "comingSoonDescription": "We're preparing educational videos about family law topics including divorce procedures, inheritance rights, and custody matters.",
+    "topics": {
+      "divorce": "• Divorce proceedings and procedures",
+      "inheritance": "• Inheritance law and estate planning",
+      "custody": "• Child custody and support guidelines",
+      "alimony": "• Alimony and financial arrangements"
+    },
+    "submitCaseInstead": "Submit a Case Instead",
+    "minutes": "{{duration}} minutes",
+    "views": "{{views}} views",
+    "watchVideo": "Watch Video"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred. Please try again.",
+    "success": "Success!",
+    "cancel": "Cancel",
+    "save": "Save",
+    "edit": "Edit",
+    "delete": "Delete",
+    "confirm": "Confirm",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "search": "Search",
+    "filter": "Filter",
+    "sort": "Sort",
+    "date": "Date",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "address": "Address",
+    "required": "Required",
+    "optional": "Optional"
+  }
+}
