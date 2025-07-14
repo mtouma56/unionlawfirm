@@ -370,7 +370,12 @@ class LawFirmAPITester:
             self.test_get_user_appointments,
             self.test_get_videos,
             self.test_invalid_login,
-            self.test_unauthorized_access
+            self.test_unauthorized_access,
+            # Admin-specific tests
+            self.test_admin_login,
+            self.test_admin_get_all_cases,
+            self.test_admin_update_case_status,
+            self.test_non_admin_access_to_admin_endpoints
         ]
         
         for test in tests:
