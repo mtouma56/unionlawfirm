@@ -709,37 +709,6 @@ function App() {
   };
 
   const renderDashboard = () => {
-    useEffect(() => {
-      fetchUserData();
-    }, []);
-
-    const fetchUserData = async () => {
-      try {
-        const [casesResponse, appointmentsResponse] = await Promise.all([
-          fetch(`${API_URL}/api/cases`, {
-            headers: { 'Authorization': `Bearer ${token}` }
-          }),
-          fetch(`${API_URL}/api/appointments`, {
-            headers: { 'Authorization': `Bearer ${token}` }
-          })
-        ]);
-
-        if (casesResponse.ok) {
-          const casesData = await casesResponse.json();
-          setCases(casesData);
-        }
-
-        if (appointmentsResponse.ok) {
-          const appointmentsData = await appointmentsResponse.json();
-          setAppointments(appointmentsData);
-        }
-      } catch (error) {
-        console.error('Error fetching user data:', error);
-      } finally {
-        setDashboardLoading(false);
-      }
-    };
-
     if (dashboardLoading) {
       return (
         <div className="min-h-screen bg-gray-50 flex items-center justify-center">
