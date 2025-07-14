@@ -77,6 +77,11 @@ function App() {
     setShowLanguageMenu(false);
   };
 
+  const getCurrentLanguageFlag = () => {
+    const flags = { en: '🇺🇸', fr: '🇫🇷', ar: '🇱🇧' };
+    return flags[i18n.language] || '🇺🇸';
+  };
+
   // Close language menu when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
