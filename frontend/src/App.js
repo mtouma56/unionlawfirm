@@ -2232,6 +2232,14 @@ function App() {
         return renderVideos();
       case 'admin':
         return renderAdmin();
+      case 'about':
+        return renderAbout();
+      case 'contact':
+        return renderContact();
+      case 'privacy':
+        return renderPrivacy();
+      case 'terms':
+        return renderTerms();
       default:
         return renderHome();
     }
