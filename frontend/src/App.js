@@ -275,12 +275,15 @@ function App() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <div className="flex-shrink-0 flex items-center">
+            <button 
+              onClick={() => navigateToPage('home')}
+              className="flex-shrink-0 flex items-center hover:opacity-80 transition-opacity"
+            >
               <div className="w-8 h-8 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center">
                 <span className="text-white font-bold text-sm">⚖</span>
               </div>
               <span className="ml-2 text-xl font-bold text-gray-900">Union Law Firm</span>
-            </div>
+            </button>
           </div>
           
           {/* Desktop Navigation */}
