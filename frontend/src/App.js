@@ -1910,7 +1910,7 @@ function App() {
       <div className="pt-16">
         {renderCurrentPage()}
       </div>
-      </div>
+      {renderFooter()}
     </div>
   );
 }
