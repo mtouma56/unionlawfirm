@@ -172,6 +172,182 @@
     "views": "{{views}} vues",
     "watchVideo": "Regarder la Vidéo"
   },
+  },
+  "about": {
+    "title": "À Propos d'Union Law Firm",
+    "subtitle": "Votre partenaire juridique de confiance au Liban",
+    "story": {
+      "title": "Notre Histoire",
+      "content1": "Fondé en 2020, Union Law Firm s'est consacré à fournir des services juridiques exceptionnels aux familles à travers le Liban. Nous nous spécialisons dans les questions de droit familial, comprenant la nature sensible de ces questions et fournissant une représentation professionnelle et compatissante.",
+      "content2": "Notre équipe d'avocats expérimentés aide les clients à naviguer dans des défis juridiques complexes depuis plus d'une décennie. Nous sommes fiers de notre compréhension approfondie du droit familial libanais et de notre engagement à obtenir les meilleurs résultats possibles pour nos clients."
+    },
+    "mission": {
+      "title": "Notre Mission",
+      "content": "Fournir une représentation juridique compatissante et qualifiée aux familles au Liban, en s'assurant que chaque client reçoit une attention personnalisée et des services juridiques de la plus haute qualité dans leur moment de besoin."
+    },
+    "values": {
+      "title": "Nos Valeurs",
+      "integrity": "• Intégrité et transparence dans toutes les relations",
+      "compassion": "• Service client compatissant",
+      "excellence": "• Excellence dans la représentation juridique",
+      "respect": "• Respect des valeurs culturelles et religieuses"
+    },
+    "expertise": {
+      "title": "Notre Expertise",
+      "familyLaw": {
+        "title": "Spécialistes du Droit Familial",
+        "content": "Avec des années d'expérience dans le droit familial libanais, nous traitons des cas complexes impliquant le divorce, la garde et les arrangements financiers."
+      },
+      "inheritance": {
+        "title": "Droit des Successions",
+        "content": "Nous fournissons des conseils d'experts sur les questions d'héritage, garantissant une distribution équitable des biens selon la loi libanaise."
+      },
+      "custody": {
+        "title": "Garde d'Enfants",
+        "content": "Nous priorisons l'intérêt supérieur des enfants tout en protégeant vos droits parentaux tout au long des procédures de garde."
+      },
+      "mediation": {
+        "title": "Services de Médiation",
+        "content": "Nous offrons des services de médiation pour aider les familles à résoudre les conflits à l'amiable sans procédures judiciaires longues."
+      }
+    },
+    "cta": {
+      "title": "Prêt à Commencer ?",
+      "subtitle": "Contactez-nous aujourd'hui pour une consultation sur vos besoins juridiques.",
+      "contact": "Contactez-nous",
+      "booking": "Réserver une Consultation"
+    }
+  },
+  "contact": {
+    "title": "Contactez-nous",
+    "subtitle": "Entrez en contact avec notre équipe juridique",
+    "getInTouch": "Entrez en Contact",
+    "officeAddress": "Adresse du Bureau",
+    "phone": "Téléphone",
+    "email": "Email",
+    "businessHours": "Heures d'Ouverture",
+    "hours": {
+      "weekdays": "Lundi - Vendredi : 9h00 - 18h00",
+      "saturday": "Samedi : 10h00 - 14h00",
+      "sunday": "Dimanche : Fermé"
+    },
+    "form": {
+      "title": "Envoyez-nous un Message",
+      "name": "Nom",
+      "namePlaceholder": "Votre nom complet",
+      "email": "Email",
+      "emailPlaceholder": "votre@email.com",
+      "subject": "Sujet",
+      "subjectPlaceholder": "Comment pouvons-nous vous aider ?",
+      "message": "Message",
+      "messagePlaceholder": "Parlez-nous de vos besoins juridiques...",
+      "submit": "Envoyer le Message"
+    }
+  },
+  "privacy": {
+    "title": "Politique de Confidentialité",
+    "sections": {
+      "collect": {
+        "title": "1. Informations que Nous Collectons",
+        "intro": "Nous collectons les informations que vous nous fournissez directement, par exemple lorsque vous :",
+        "items": [
+          "Créez un compte ou soumettez un cas juridique",
+          "Réservez un rendez-vous ou une consultation",
+          "Nous contactez via notre site web ou email",
+          "Vous abonnez à notre newsletter ou aux mises à jour"
+        ]
+      },
+      "use": {
+        "title": "2. Comment Nous Utilisons Vos Informations",
+        "intro": "Nous utilisons vos informations pour :",
+        "items": [
+          "Fournir des services juridiques et des consultations",
+          "Traiter vos soumissions de cas et rendez-vous",
+          "Communiquer avec vous sur vos affaires juridiques",
+          "Améliorer nos services et la fonctionnalité du site web"
+        ]
+      },
+      "sharing": {
+        "title": "3. Partage d'Informations",
+        "intro": "Nous ne vendons, n'échangeons ni ne transférons vos informations personnelles à des tiers, sauf comme décrit dans cette politique. Nous pouvons partager des informations avec :",
+        "items": [
+          "Des professionnels juridiques travaillant sur votre cas",
+          "Les systèmes judiciaires selon la loi",
+          "Les fournisseurs de services qui assistent dans nos opérations"
+        ]
+      },
+      "security": {
+        "title": "4. Sécurité des Données",
+        "content": "Nous mettons en œuvre des mesures de sécurité appropriées pour protéger vos informations personnelles contre l'accès non autorisé, la modification, la divulgation ou la destruction. Cependant, aucune méthode de transmission sur Internet n'est 100% sécurisée."
+      },
+      "rights": {
+        "title": "5. Vos Droits",
+        "intro": "Vous avez le droit de :",
+        "items": [
+          "Accéder à vos informations personnelles",
+          "Corriger des informations inexactes",
+          "Demander la suppression de vos informations",
+          "Vous opposer au traitement de vos informations"
+        ]
+      },
+      "contact": {
+        "title": "6. Contactez-nous",
+        "intro": "Si vous avez des questions sur cette Politique de Confidentialité, veuillez nous contacter à :",
+        "email": "privacy@unionlaw.com"
+      }
+    }
+  },
+  "terms": {
+    "title": "Conditions d'Utilisation",
+    "sections": {
+      "acceptance": {
+        "title": "1. Acceptation des Conditions",
+        "content": "En accédant et en utilisant le site web et les services d'Union Law Firm, vous acceptez et acceptez d'être lié par ces Conditions d'Utilisation. Si vous n'acceptez pas ces conditions, veuillez ne pas utiliser nos services."
+      },
+      "services": {
+        "title": "2. Services Fournis",
+        "intro": "Union Law Firm fournit des services juridiques incluant mais non limités à :",
+        "items": [
+          "Consultation et représentation en droit familial",
+          "Procédures de divorce",
+          "Questions de garde d'enfants",
+          "Héritage et planification successorale",
+          "Arrangements d'aliments et de soutien"
+        ]
+      },
+      "responsibilities": {
+        "title": "3. Responsabilités du Client",
+        "intro": "En tant que client, vous acceptez de :",
+        "items": [
+          "Fournir des informations précises et complètes",
+          "Payer les frais et coûts convenus",
+          "Coopérer dans la représentation",
+          "Maintenir la confidentialité lorsque requis"
+        ]
+      },
+      "relationship": {
+        "title": "4. Relation Avocat-Client",
+        "content": "Une relation avocat-client n'est établie que lorsque vous avez signé un accord écrit avec Union Law Firm. Visiter notre site web ou soumettre des informations ne crée pas une relation avocat-client."
+      },
+      "fees": {
+        "title": "5. Frais et Paiement",
+        "content": "Les frais juridiques et coûts seront comme convenu dans votre accord écrit. Le paiement est dû comme spécifié dans votre accord. Nous nous réservons le droit de nous retirer de la représentation si les frais ne sont pas payés comme convenu."
+      },
+      "liability": {
+        "title": "6. Limitation de Responsabilité",
+        "content": "La responsabilité d'Union Law Firm est limitée au montant des frais payés par le client. Nous ne sommes pas responsables de tout dommage consécutif, indirect ou punitif."
+      },
+      "law": {
+        "title": "7. Loi Applicable",
+        "content": "Ces conditions sont régies par les lois du Liban. Tout litige sera résolu dans les tribunaux du Liban."
+      },
+      "contact": {
+        "title": "8. Informations de Contact",
+        "intro": "Pour des questions sur ces Conditions d'Utilisation, contactez-nous à :",
+        "email": "legal@unionlaw.com"
+      }
+    }
+  },
   "footer": {
     "contact": {
       "title": "Informations de Contact",
