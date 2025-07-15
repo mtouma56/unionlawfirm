@@ -116,6 +116,78 @@
       - working: true
         agent: "main"
         comment: "Backend API endpoints are already implemented and working for all pages"
+  
+  - task: "Authentication endpoints (register, login, me)"
+    implemented: true
+    working: true
+    file: "server.py"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "testing"
+        comment: "Comprehensive testing completed. All authentication endpoints working correctly: user registration, login, get current user info, invalid login handling, and unauthorized access protection all passed."
+  
+  - task: "Case submission endpoints with file uploads"
+    implemented: true
+    working: true
+    file: "server.py"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "testing"
+        comment: "Case submission with file upload tested successfully. Created case with file attachment, retrieved user cases. All CRUD operations working correctly."
+  
+  - task: "Appointment booking endpoints"
+    implemented: true
+    working: true
+    file: "server.py"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "testing"
+        comment: "Appointment booking functionality tested successfully. Created appointment, retrieved user appointments. All endpoints working correctly."
+  
+  - task: "User dashboard endpoints"
+    implemented: true
+    working: true
+    file: "server.py"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "testing"
+        comment: "User dashboard endpoints tested successfully. Users can retrieve their cases, appointments, and access video content. All user-specific data retrieval working correctly."
+  
+  - task: "Admin dashboard endpoints"
+    implemented: true
+    working: true
+    file: "server.py"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "testing"
+        comment: "Admin dashboard endpoints tested successfully. Admin can login, view all cases with user details, update case status. Admin access control working correctly - non-admin users properly blocked from admin endpoints."
+  
+  - task: "Video content endpoints"
+    implemented: true
+    working: true
+    file: "server.py"
+    stuck_count: 0
+    priority: "medium"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "testing"
+        comment: "Video endpoints tested successfully. Public video listing endpoint working correctly. No videos in database currently but endpoint structure is correct."
 
 ## frontend:
   - task: "Arabic translations completion"
