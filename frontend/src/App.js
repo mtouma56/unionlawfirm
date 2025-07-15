@@ -279,10 +279,14 @@ function App() {
               onClick={() => navigateToPage('home')}
               className="flex-shrink-0 flex items-center hover:opacity-80 transition-opacity"
             >
-              <div className="w-8 h-8 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-sm">⚖</span>
+              <div className="w-10 h-10 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center shadow-lg">
+                <img 
+                  src="https://images.unsplash.com/photo-1589578527966-fdac0f44566c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzR8MHwxfHNlYXJjaHwzfHxsYXclMjBmaXJtJTIwbG9nb3xlbnwwfHx8fDE3NTI1NjQ1NTV8MA&ixlib=rb-4.1.0&q=85&w=40&h=40"
+                  alt="Union Law Firm Logo"
+                  className="w-6 h-6 object-cover rounded-full"
+                />
               </div>
-              <span className="ml-2 text-xl font-bold text-gray-900">Union Law Firm</span>
+              <span className="ml-3 text-xl font-bold text-gray-900">Union Law Firm</span>
             </button>
           </div>
           
