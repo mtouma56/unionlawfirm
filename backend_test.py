@@ -8,7 +8,7 @@ import os
 import tempfile
 
 class LawFirmAPITester:
-    def __init__(self, base_url="https://ed9f5287-426d-4518-9c48-1cea9ac72e3b.preview.emergentagent.com"):
+    def __init__(self, base_url="https://651b091e-61dc-4fcb-b532-218f2320b51c.preview.emergentagent.com"):
         self.base_url = base_url
         self.token = None
         self.admin_token = None
