@@ -1031,6 +1031,7 @@ function App() {
             </div>
           </form>
         </div>
+        </div>
       </div>
     );
   };
