@@ -1037,7 +1037,7 @@ function App() {
             <ul className="space-y-2 text-gray-300">
               <li>
                 <button
-                  onClick={() => navigateToPage('home')}
+                  onClick={() => navigateToPage('about')}
                   className="text-sm hover:text-yellow-400 transition-colors"
                 >
                   {t('footer.quickLinks.about')}
@@ -1061,19 +1061,25 @@ function App() {
               </li>
               <li>
                 <button
-                  onClick={() => navigateToPage('home')}
+                  onClick={() => navigateToPage('contact')}
                   className="text-sm hover:text-yellow-400 transition-colors"
                 >
                   {t('footer.quickLinks.contact')}
                 </button>
               </li>
               <li>
-                <button className="text-sm hover:text-yellow-400 transition-colors">
+                <button
+                  onClick={() => navigateToPage('privacy')}
+                  className="text-sm hover:text-yellow-400 transition-colors"
+                >
                   {t('footer.quickLinks.privacy')}
                 </button>
               </li>
               <li>
-                <button className="text-sm hover:text-yellow-400 transition-colors">
+                <button
+                  onClick={() => navigateToPage('terms')}
+                  className="text-sm hover:text-yellow-400 transition-colors"
+                >
                   {t('footer.quickLinks.terms')}
                 </button>
               </li>
