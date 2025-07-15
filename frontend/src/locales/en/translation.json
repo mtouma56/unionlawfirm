@@ -172,6 +172,182 @@
     "views": "{{views}} views",
     "watchVideo": "Watch Video"
   },
+  },
+  "about": {
+    "title": "About Union Law Firm",
+    "subtitle": "Your trusted legal partner in Lebanon",
+    "story": {
+      "title": "Our Story",
+      "content1": "Founded in 2020, Union Law Firm has been dedicated to providing exceptional legal services to families across Lebanon. We specialize in family law matters, understanding the sensitive nature of these issues and providing compassionate, professional representation.",
+      "content2": "Our team of experienced attorneys has been helping clients navigate complex legal challenges for over a decade. We pride ourselves on our deep understanding of Lebanese family law and our commitment to achieving the best possible outcomes for our clients."
+    },
+    "mission": {
+      "title": "Our Mission",
+      "content": "To provide compassionate, skilled legal representation to families in Lebanon, ensuring that every client receives personalized attention and the highest quality legal services in their time of need."
+    },
+    "values": {
+      "title": "Our Values",
+      "integrity": "• Integrity and transparency in all dealings",
+      "compassion": "• Compassionate client service",
+      "excellence": "• Excellence in legal representation",
+      "respect": "• Respect for cultural and religious values"
+    },
+    "expertise": {
+      "title": "Our Expertise",
+      "familyLaw": {
+        "title": "Family Law Specialists",
+        "content": "With years of experience in Lebanese family law, we handle complex cases involving divorce, custody, and financial arrangements."
+      },
+      "inheritance": {
+        "title": "Inheritance Law",
+        "content": "We provide expert guidance on inheritance matters, ensuring fair distribution of assets according to Lebanese law."
+      },
+      "custody": {
+        "title": "Child Custody",
+        "content": "We prioritize the best interests of children while protecting your parental rights throughout custody proceedings."
+      },
+      "mediation": {
+        "title": "Mediation Services",
+        "content": "We offer mediation services to help families resolve disputes amicably without lengthy court proceedings."
+      }
+    },
+    "cta": {
+      "title": "Ready to Get Started?",
+      "subtitle": "Contact us today for a consultation about your legal needs.",
+      "contact": "Contact Us",
+      "booking": "Book Consultation"
+    }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Get in touch with our legal team",
+    "getInTouch": "Get in Touch",
+    "officeAddress": "Office Address",
+    "phone": "Phone",
+    "email": "Email",
+    "businessHours": "Business Hours",
+    "hours": {
+      "weekdays": "Monday - Friday: 9:00 AM - 6:00 PM",
+      "saturday": "Saturday: 10:00 AM - 2:00 PM",
+      "sunday": "Sunday: Closed"
+    },
+    "form": {
+      "title": "Send us a Message",
+      "name": "Name",
+      "namePlaceholder": "Your full name",
+      "email": "Email",
+      "emailPlaceholder": "your@email.com",
+      "subject": "Subject",
+      "subjectPlaceholder": "How can we help you?",
+      "message": "Message",
+      "messagePlaceholder": "Tell us about your legal needs...",
+      "submit": "Send Message"
+    }
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "sections": {
+      "collect": {
+        "title": "1. Information We Collect",
+        "intro": "We collect information you provide directly to us, such as when you:",
+        "items": [
+          "Create an account or submit a legal case",
+          "Book an appointment or consultation",
+          "Contact us through our website or email",
+          "Subscribe to our newsletter or updates"
+        ]
+      },
+      "use": {
+        "title": "2. How We Use Your Information",
+        "intro": "We use your information to:",
+        "items": [
+          "Provide legal services and consultation",
+          "Process your case submissions and appointments",
+          "Communicate with you about your legal matters",
+          "Improve our services and website functionality"
+        ]
+      },
+      "sharing": {
+        "title": "3. Information Sharing",
+        "intro": "We do not sell, trade, or otherwise transfer your personal information to outside parties except as described in this policy. We may share information with:",
+        "items": [
+          "Legal professionals working on your case",
+          "Court systems as required by law",
+          "Service providers who assist in our operations"
+        ]
+      },
+      "security": {
+        "title": "4. Data Security",
+        "content": "We implement appropriate security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the internet is 100% secure."
+      },
+      "rights": {
+        "title": "5. Your Rights",
+        "intro": "You have the right to:",
+        "items": [
+          "Access your personal information",
+          "Correct inaccurate information",
+          "Request deletion of your information",
+          "Object to processing of your information"
+        ]
+      },
+      "contact": {
+        "title": "6. Contact Us",
+        "intro": "If you have questions about this Privacy Policy, please contact us at:",
+        "email": "privacy@unionlaw.com"
+      }
+    }
+  },
+  "terms": {
+    "title": "Terms of Service",
+    "sections": {
+      "acceptance": {
+        "title": "1. Acceptance of Terms",
+        "content": "By accessing and using Union Law Firm's website and services, you accept and agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our services."
+      },
+      "services": {
+        "title": "2. Services Provided",
+        "intro": "Union Law Firm provides legal services including but not limited to:",
+        "items": [
+          "Family law consultation and representation",
+          "Divorce proceedings",
+          "Child custody matters",
+          "Inheritance and estate planning",
+          "Alimony and support arrangements"
+        ]
+      },
+      "responsibilities": {
+        "title": "3. Client Responsibilities",
+        "intro": "As a client, you agree to:",
+        "items": [
+          "Provide accurate and complete information",
+          "Pay fees and costs as agreed",
+          "Cooperate in the representation",
+          "Maintain confidentiality when required"
+        ]
+      },
+      "relationship": {
+        "title": "4. Attorney-Client Relationship",
+        "content": "An attorney-client relationship is established only when you have executed a written agreement with Union Law Firm. Visiting our website or submitting information does not create an attorney-client relationship."
+      },
+      "fees": {
+        "title": "5. Fees and Payment",
+        "content": "Legal fees and costs will be as agreed in your written agreement. Payment is due as specified in your agreement. We reserve the right to withdraw from representation if fees are not paid as agreed."
+      },
+      "liability": {
+        "title": "6. Limitation of Liability",
+        "content": "Union Law Firm's liability is limited to the amount of fees paid by the client. We are not liable for any consequential, indirect, or punitive damages."
+      },
+      "law": {
+        "title": "7. Governing Law",
+        "content": "These terms are governed by the laws of Lebanon. Any disputes will be resolved in the courts of Lebanon."
+      },
+      "contact": {
+        "title": "8. Contact Information",
+        "intro": "For questions about these Terms of Service, contact us at:",
+        "email": "legal@unionlaw.com"
+      }
+    }
+  },
   "footer": {
     "contact": {
       "title": "Contact Information",
