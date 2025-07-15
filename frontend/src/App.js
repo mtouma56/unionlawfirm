@@ -618,6 +618,330 @@ function App() {
     </nav>
   );
 
+  const renderAbout = () => (
+    <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-4xl mx-auto">
+        <div className="text-center mb-12">
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">About Union Law Firm</h1>
+          <p className="text-xl text-gray-600">Your trusted legal partner in Lebanon</p>
+        </div>
+
+        <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">Our Story</h2>
+          <p className="text-gray-700 mb-4">
+            Founded in 2020, Union Law Firm has been dedicated to providing exceptional legal services to families across Lebanon. We specialize in family law matters, understanding the sensitive nature of these issues and providing compassionate, professional representation.
+          </p>
+          <p className="text-gray-700 mb-4">
+            Our team of experienced attorneys has been helping clients navigate complex legal challenges for over a decade. We pride ourselves on our deep understanding of Lebanese family law and our commitment to achieving the best possible outcomes for our clients.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-8 mb-8">
+          <div className="bg-white rounded-lg shadow-lg p-6">
+            <h3 className="text-xl font-bold text-gray-900 mb-4">Our Mission</h3>
+            <p className="text-gray-700">
+              To provide compassionate, skilled legal representation to families in Lebanon, ensuring that every client receives personalized attention and the highest quality legal services in their time of need.
+            </p>
+          </div>
+          <div className="bg-white rounded-lg shadow-lg p-6">
+            <h3 className="text-xl font-bold text-gray-900 mb-4">Our Values</h3>
+            <ul className="text-gray-700 space-y-2">
+              <li>• Integrity and transparency in all dealings</li>
+              <li>• Compassionate client service</li>
+              <li>• Excellence in legal representation</li>
+              <li>• Respect for cultural and religious values</li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">Our Expertise</h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-2">Family Law Specialists</h4>
+              <p className="text-gray-700">With years of experience in Lebanese family law, we handle complex cases involving divorce, custody, and financial arrangements.</p>
+            </div>
+            <div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-2">Inheritance Law</h4>
+              <p className="text-gray-700">We provide expert guidance on inheritance matters, ensuring fair distribution of assets according to Lebanese law.</p>
+            </div>
+            <div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-2">Child Custody</h4>
+              <p className="text-gray-700">We prioritize the best interests of children while protecting your parental rights throughout custody proceedings.</p>
+            </div>
+            <div>
+              <h4 className="text-lg font-semibold text-gray-900 mb-2">Mediation Services</h4>
+              <p className="text-gray-700">We offer mediation services to help families resolve disputes amicably without lengthy court proceedings.</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-lg p-8 text-white text-center">
+          <h2 className="text-2xl font-bold mb-4">Ready to Get Started?</h2>
+          <p className="text-xl mb-6">Contact us today for a consultation about your legal needs.</p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <button
+              onClick={() => navigateToPage('contact')}
+              className="bg-white text-yellow-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+            >
+              Contact Us
+            </button>
+            <button
+              onClick={() => navigateToPage('booking')}
+              className="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-yellow-600 transition-colors"
+            >
+              Book Consultation
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+
+  const renderContact = () => (
+    <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-4xl mx-auto">
+        <div className="text-center mb-12">
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">Contact Us</h1>
+          <p className="text-xl text-gray-600">Get in touch with our legal team</p>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-8">
+          <div className="bg-white rounded-lg shadow-lg p-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">Get in Touch</h2>
+            <div className="space-y-4">
+              <div className="flex items-start">
+                <svg className="w-6 h-6 text-yellow-600 mr-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                <div>
+                  <h3 className="font-semibold text-gray-900">Office Address</h3>
+                  <p className="text-gray-700">123 Legal Street, Beirut, Lebanon</p>
+                </div>
+              </div>
+              <div className="flex items-start">
+                <svg className="w-6 h-6 text-yellow-600 mr-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+                <div>
+                  <h3 className="font-semibold text-gray-900">Phone</h3>
+                  <p className="text-gray-700">+961 1 234 567</p>
+                </div>
+              </div>
+              <div className="flex items-start">
+                <svg className="w-6 h-6 text-yellow-600 mr-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                <div>
+                  <h3 className="font-semibold text-gray-900">Email</h3>
+                  <p className="text-gray-700">contact@unionlaw.com</p>
+                </div>
+              </div>
+              <div className="flex items-start">
+                <svg className="w-6 h-6 text-yellow-600 mr-3 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <div>
+                  <h3 className="font-semibold text-gray-900">Business Hours</h3>
+                  <p className="text-gray-700">Monday - Friday: 9:00 AM - 6:00 PM</p>
+                  <p className="text-gray-700">Saturday: 10:00 AM - 2:00 PM</p>
+                  <p className="text-gray-700">Sunday: Closed</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-white rounded-lg shadow-lg p-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">Send us a Message</h2>
+            <form className="space-y-4">
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">Name</label>
+                <input
+                  type="text"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-yellow-500 focus:border-yellow-500"
+                  placeholder="Your full name"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                <input
+                  type="email"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-yellow-500 focus:border-yellow-500"
+                  placeholder="your@email.com"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">Subject</label>
+                <input
+                  type="text"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-yellow-500 focus:border-yellow-500"
+                  placeholder="How can we help you?"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                <textarea
+                  rows="4"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-yellow-500 focus:border-yellow-500"
+                  placeholder="Tell us about your legal needs..."
+                />
+              </div>
+              <button
+                type="submit"
+                className="w-full bg-gradient-to-r from-yellow-400 to-yellow-600 text-white py-3 px-4 rounded-md font-semibold hover:from-yellow-500 hover:to-yellow-700 transition-colors"
+              >
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+
+  const renderPrivacy = () => (
+    <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-4xl mx-auto">
+        <div className="bg-white rounded-lg shadow-lg p-8">
+          <h1 className="text-3xl font-bold text-gray-900 mb-8">Privacy Policy</h1>
+          
+          <div className="space-y-6 text-gray-700">
+            <div>
+              <h2 className="text-xl font-semibold text-gray-900 mb-3">1. Information We Collect</h2>
+              <p className="mb-3">We collect information you provide directly to us, such as when you:</p>
+              <ul className="list-disc list-inside space-y-1 ml-4">
+                <li>Create an account or submit a legal case</li>
+                <li>Book an appointment or consultation</li>
+                <li>Contact us through our website or email</li>
+                <li>Subscribe to our newsletter or updates</li>
+              </ul>
+            </div>
+
+            <div>
+              <h2 className="text-xl font-semibold text-gray-900 mb-3">2. How We Use Your Information</h2>
+              <p className="mb-3">We use your information to:</p>
+              <ul className="list-disc list-inside space-y-1 ml-4">
+                <li>Provide legal services and consultation</li>
+                <li>Process your case submissions and appointments</li>
+                <li>Communicate with you about your legal matters</li>
+                <li>Improve our services and website functionality</li>
+              </ul>
+            </div>
+
+            <div>
+              <h2 className="text-xl font-semibold text-gray-900 mb-3">3. Information Sharing</h2>
+              <p>We do not sell, trade, or otherwise transfer your personal information to outside parties except as described in this policy. We may share information with:</p>
+              <ul className="list-disc list-inside space-y-1 ml-4">
+                <li>Legal professionals working on your case</li>
+                <li>Court systems as required by law</li>
+                <li>Service providers who assist in our operations</li>
+              </ul>
+            </div>
+
+            <div>
+              <h2 className="text-xl font-semibold text-gray-900 mb-3">4. Data Security</h2>
+              <p>We implement appropriate security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the internet is 100% secure.</p>
+            </div>
+
+            <div>
+              <h2 className="text-xl font-semibold text-gray-900 mb-3">5. Your Rights</h2>
+              <p className="mb-3">You have the right to:</p>
+              <ul className="list-disc list-inside space-y-1 ml-4">
+                <li>Access your personal information</li>
+                <li>Correct inaccurate information</li>
+                <li>Request deletion of your information</li>
+                <li>Object to processing of your information</li>
+              </ul>
+            </div>
+
+            <div>
+              <h2 className="text-xl font-semibold text-gray-900 mb-3">6. Contact Us</h2>
+              <p>If you have questions about this Privacy Policy, please contact us at:</p>
+              <div className="mt-2 bg-gray-50 p-4 rounded-md">
+                <p>Union Law Firm</p>
+                <p>123 Legal Street, Beirut, Lebanon</p>
+                <p>Email: privacy@unionlaw.com</p>
+                <p>Phone: +961 1 234 567</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+
+  const renderTerms = () => (
+    <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-4xl mx-auto">
+        <div className="bg-white rounded-lg shadow-lg p-8">
+          <h1 className="text-3xl font-bold text-gray-900 mb-8">Terms of Service</h1>
+          
+          <div className="space-y-6 text-gray-700">
+            <div>
+              <h2 className="text-xl font-semibold text-gray-900 mb-3">1. Acceptance of Terms</h2>
+              <p>By accessing and using Union Law Firm's website and services, you accept and agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our services.</p>
+            </div>
+
+            <div>
+              <h2 className="text-xl font-semibold text-gray-900 mb-3">2. Services Provided</h2>
+              <p className="mb-3">Union Law Firm provides legal services including but not limited to:</p>
+              <ul className="list-disc list-inside space-y-1 ml-4">
+                <li>Family law consultation and representation</li>
+                <li>Divorce proceedings</li>
+                <li>Child custody matters</li>
+                <li>Inheritance and estate planning</li>
+                <li>Alimony and support arrangements</li>
+              </ul>
+            </div>
+
+            <div>
+              <h2 className="text-xl font-semibold text-gray-900 mb-3">3. Client Responsibilities</h2>
+              <p className="mb-3">As a client, you agree to:</p>
+              <ul className="list-disc list-inside space-y-1 ml-4">
+                <li>Provide accurate and complete information</li>
+                <li>Pay fees and costs as agreed</li>
+                <li>Cooperate in the representation</li>
+                <li>Maintain confidentiality when required</li>
+              </ul>
+            </div>
+
+            <div>
+              <h2 className="text-xl font-semibold text-gray-900 mb-3">4. Attorney-Client Relationship</h2>
+              <p>An attorney-client relationship is established only when you have executed a written agreement with Union Law Firm. Visiting our website or submitting information does not create an attorney-client relationship.</p>
+            </div>
+
+            <div>
+              <h2 className="text-xl font-semibold text-gray-900 mb-3">5. Fees and Payment</h2>
+              <p>Legal fees and costs will be as agreed in your written agreement. Payment is due as specified in your agreement. We reserve the right to withdraw from representation if fees are not paid as agreed.</p>
+            </div>
+
+            <div>
+              <h2 className="text-xl font-semibold text-gray-900 mb-3">6. Limitation of Liability</h2>
+              <p>Union Law Firm's liability is limited to the amount of fees paid by the client. We are not liable for any consequential, indirect, or punitive damages.</p>
+            </div>
+
+            <div>
+              <h2 className="text-xl font-semibold text-gray-900 mb-3">7. Governing Law</h2>
+              <p>These terms are governed by the laws of Lebanon. Any disputes will be resolved in the courts of Lebanon.</p>
+            </div>
+
+            <div>
+              <h2 className="text-xl font-semibold text-gray-900 mb-3">8. Contact Information</h2>
+              <p>For questions about these Terms of Service, contact us at:</p>
+              <div className="mt-2 bg-gray-50 p-4 rounded-md">
+                <p>Union Law Firm</p>
+                <p>123 Legal Street, Beirut, Lebanon</p>
+                <p>Email: legal@unionlaw.com</p>
+                <p>Phone: +961 1 234 567</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+
   const renderFooter = () => (
     <footer className="bg-gray-900 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
