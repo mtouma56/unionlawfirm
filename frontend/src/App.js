@@ -63,9 +63,12 @@ function App() {
   const [videosLoading, setVideosLoading] = useState(true);
   const [selectedCategory, setSelectedCategory] = useState('all');
 
-  // Language and mobile menu state
+  // Navigation and mobile menu state
   const [showLanguageMenu, setShowLanguageMenu] = useState(false);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
+  
+  // About page state
+  const [aboutLoading, setAboutLoading] = useState(false);
   
   // Set document direction based on language
   useEffect(() => {
