@@ -273,7 +273,7 @@ function App() {
   };
 
   const renderNavigation = () => (
-    <nav className="bg-white shadow-lg fixed w-full top-0 z-50">
+    <nav className="bg-[#0d1b2a] shadow-lg fixed w-full top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -282,10 +282,10 @@ function App() {
               onClick={() => navigateToPage('home')}
               className="flex-shrink-0 flex items-center hover:opacity-80 transition-opacity"
             >
-              <div className="w-10 h-10 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-full flex items-center justify-center shadow-lg">
+              <div className="w-10 h-10 bg-[#fcbf49] rounded-full flex items-center justify-center shadow-lg">
                 <span className="text-white font-bold text-sm">⚖</span>
               </div>
-              <span className="ml-3 text-xl font-bold text-gray-900">Union Law Firm</span>
+              <span className="ml-3 text-xl font-bold text-[#fefefe]">Union Law Firm</span>
             </button>
           </div>
           
@@ -294,20 +294,20 @@ function App() {
             <div className="ml-10 flex items-baseline space-x-4">
               <button
                 onClick={() => navigateToPage('home')}
-                className={`px-3 py-2 rounded-md text-sm font-medium ${
-                  currentPage === 'home' 
-                    ? 'bg-yellow-100 text-yellow-800' 
-                    : 'text-gray-700 hover:text-yellow-600'
+                className={`px-3 py-2 rounded-md text-sm font-medium tracking-wide transition-colors ${
+                  currentPage === 'home'
+                    ? 'text-[#fcbf49]'
+                    : 'text-[#fefefe] hover:text-[#fcbf49]'
                 }`}
               >
                 {t('nav.home')}
               </button>
               <button
                 onClick={() => navigateToPage('videos')}
-                className={`px-3 py-2 rounded-md text-sm font-medium ${
-                  currentPage === 'videos' 
-                    ? 'bg-yellow-100 text-yellow-800' 
-                    : 'text-gray-700 hover:text-yellow-600'
+                className={`px-3 py-2 rounded-md text-sm font-medium tracking-wide transition-colors ${
+                  currentPage === 'videos'
+                    ? 'text-[#fcbf49]'
+                    : 'text-[#fefefe] hover:text-[#fcbf49]'
                 }`}
               >
                 {t('nav.videos')}
@@ -316,30 +316,30 @@ function App() {
                 <>
                   <button
                     onClick={() => navigateToPage('submit-case')}
-                    className={`px-3 py-2 rounded-md text-sm font-medium ${
-                      currentPage === 'submit-case' 
-                        ? 'bg-yellow-100 text-yellow-800' 
-                        : 'text-gray-700 hover:text-yellow-600'
+                    className={`px-3 py-2 rounded-md text-sm font-medium tracking-wide transition-colors ${
+                      currentPage === 'submit-case'
+                        ? 'text-[#fcbf49]'
+                        : 'text-[#fefefe] hover:text-[#fcbf49]'
                     }`}
                   >
                     {t('nav.submitCase')}
                   </button>
                   <button
                     onClick={() => navigateToPage('booking')}
-                    className={`px-3 py-2 rounded-md text-sm font-medium ${
-                      currentPage === 'booking' 
-                        ? 'bg-yellow-100 text-yellow-800' 
-                        : 'text-gray-700 hover:text-yellow-600'
+                    className={`px-3 py-2 rounded-md text-sm font-medium tracking-wide transition-colors ${
+                      currentPage === 'booking'
+                        ? 'text-[#fcbf49]'
+                        : 'text-[#fefefe] hover:text-[#fcbf49]'
                     }`}
                   >
                     {t('nav.booking')}
                   </button>
                   <button
                     onClick={() => navigateToPage('dashboard')}
-                    className={`px-3 py-2 rounded-md text-sm font-medium ${
-                      currentPage === 'dashboard' 
-                        ? 'bg-yellow-100 text-yellow-800' 
-                        : 'text-gray-700 hover:text-yellow-600'
+                    className={`px-3 py-2 rounded-md text-sm font-medium tracking-wide transition-colors ${
+                      currentPage === 'dashboard'
+                        ? 'text-[#fcbf49]'
+                        : 'text-[#fefefe] hover:text-[#fcbf49]'
                     }`}
                   >
                     {t('nav.dashboard')}
@@ -347,10 +347,10 @@ function App() {
                   {user?.role === 'admin' && (
                     <button
                       onClick={() => navigateToPage('admin')}
-                      className={`px-3 py-2 rounded-md text-sm font-medium ${
-                        currentPage === 'admin' 
-                          ? 'bg-yellow-100 text-yellow-800' 
-                          : 'text-gray-700 hover:text-yellow-600'
+                      className={`px-3 py-2 rounded-md text-sm font-medium tracking-wide transition-colors ${
+                        currentPage === 'admin'
+                          ? 'text-[#fcbf49]'
+                          : 'text-[#fefefe] hover:text-[#fcbf49]'
                       }`}
                     >
                       {t('nav.admin')}
@@ -358,7 +358,7 @@ function App() {
                   )}
                   <button
                     onClick={logout}
-                    className="px-3 py-2 rounded-md text-sm font-medium text-red-600 hover:text-red-800"
+                    className="px-3 py-2 rounded-md text-sm font-medium tracking-wide text-red-400 hover:text-red-600 transition-colors"
                   >
                     {t('nav.logout')}
                   </button>
@@ -367,17 +367,17 @@ function App() {
                 <>
                   <button
                     onClick={() => navigateToPage('login')}
-                    className={`px-3 py-2 rounded-md text-sm font-medium ${
-                      currentPage === 'login' 
-                        ? 'bg-yellow-100 text-yellow-800' 
-                        : 'text-gray-700 hover:text-yellow-600'
+                    className={`px-3 py-2 rounded-md text-sm font-medium tracking-wide transition-colors ${
+                      currentPage === 'login'
+                        ? 'text-[#fcbf49]'
+                        : 'text-[#fefefe] hover:text-[#fcbf49]'
                     }`}
                   >
                     {t('nav.login')}
                   </button>
                   <button
                     onClick={() => navigateToPage('register')}
-                    className="bg-gradient-to-r from-yellow-400 to-yellow-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:from-yellow-500 hover:to-yellow-700 transition-all duration-200"
+                    className="bg-[#fcbf49] text-[#0d1b2a] px-4 py-2 rounded-md text-sm font-medium tracking-wide shadow hover:bg-[#fcbf49]/90 transition-colors"
                   >
                     {t('nav.register')}
                   </button>
@@ -388,7 +388,7 @@ function App() {
               <div className="relative language-menu">
                 <button
                   onClick={() => setShowLanguageMenu(!showLanguageMenu)}
-                  className="flex items-center px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-yellow-600"
+                  className="flex items-center px-3 py-2 rounded-md text-sm font-medium tracking-wide text-[#fefefe] hover:text-[#fcbf49] transition-colors"
                 >
                   <span className="mr-2">{getCurrentLanguageFlag()}</span>
                   <span className="hidden sm:inline">{i18n.language.toUpperCase()}</span>
@@ -473,7 +473,7 @@ function App() {
             <div className="mobile-menu">
               <button
                 onClick={() => setShowMobileMenu(!showMobileMenu)}
-                className="flex items-center justify-center w-10 h-10 rounded-md text-gray-700 hover:text-yellow-600 hover:bg-gray-100 transition-colors border border-gray-300"
+                className="flex items-center justify-center w-10 h-10 rounded-md text-[#fefefe] hover:text-[#fcbf49] hover:bg-[#0d1b2a]/70 transition-colors border border-[#fcbf49]"
                 aria-label="Open mobile menu"
               >
                 <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -491,16 +491,16 @@ function App() {
         {/* Mobile Navigation Menu */}
         {showMobileMenu && (
           <div className="md:hidden mobile-menu">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-gray-200">
+            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-[#0d1b2a] border-t border-[#fcbf49]">
               <button
                 onClick={() => {
                   navigateToPage('home');
                   setShowMobileMenu(false);
                 }}
-                className={`block w-full text-left px-3 py-2 rounded-md text-base font-medium ${
-                  currentPage === 'home' 
-                    ? 'bg-yellow-100 text-yellow-800' 
-                    : 'text-gray-700 hover:text-yellow-600 hover:bg-gray-50'
+                className={`block w-full text-left px-3 py-2 rounded-md text-base font-medium tracking-wide transition-colors ${
+                  currentPage === 'home'
+                    ? 'text-[#fcbf49]'
+                    : 'text-[#fefefe] hover:text-[#fcbf49] hover:bg-[#0d1b2a]/70'
                 }`}
               >
                 {t('nav.home')}
@@ -510,10 +510,10 @@ function App() {
                   navigateToPage('videos');
                   setShowMobileMenu(false);
                 }}
-                className={`block w-full text-left px-3 py-2 rounded-md text-base font-medium ${
-                  currentPage === 'videos' 
-                    ? 'bg-yellow-100 text-yellow-800' 
-                    : 'text-gray-700 hover:text-yellow-600 hover:bg-gray-50'
+                className={`block w-full text-left px-3 py-2 rounded-md text-base font-medium tracking-wide transition-colors ${
+                  currentPage === 'videos'
+                    ? 'text-[#fcbf49]'
+                    : 'text-[#fefefe] hover:text-[#fcbf49] hover:bg-[#0d1b2a]/70'
                 }`}
               >
                 {t('nav.videos')}
@@ -526,10 +526,10 @@ function App() {
                       navigateToPage('submit-case');
                       setShowMobileMenu(false);
                     }}
-                    className={`block w-full text-left px-3 py-2 rounded-md text-base font-medium ${
-                      currentPage === 'submit-case' 
-                        ? 'bg-yellow-100 text-yellow-800' 
-                        : 'text-gray-700 hover:text-yellow-600 hover:bg-gray-50'
+                    className={`block w-full text-left px-3 py-2 rounded-md text-base font-medium tracking-wide transition-colors ${
+                      currentPage === 'submit-case'
+                        ? 'text-[#fcbf49]'
+                        : 'text-[#fefefe] hover:text-[#fcbf49] hover:bg-[#0d1b2a]/70'
                     }`}
                   >
                     {t('nav.submitCase')}
@@ -539,10 +539,10 @@ function App() {
                       navigateToPage('booking');
                       setShowMobileMenu(false);
                     }}
-                    className={`block w-full text-left px-3 py-2 rounded-md text-base font-medium ${
-                      currentPage === 'booking' 
-                        ? 'bg-yellow-100 text-yellow-800' 
-                        : 'text-gray-700 hover:text-yellow-600 hover:bg-gray-50'
+                    className={`block w-full text-left px-3 py-2 rounded-md text-base font-medium tracking-wide transition-colors ${
+                      currentPage === 'booking'
+                        ? 'text-[#fcbf49]'
+                        : 'text-[#fefefe] hover:text-[#fcbf49] hover:bg-[#0d1b2a]/70'
                     }`}
                   >
                     {t('nav.booking')}
@@ -552,10 +552,10 @@ function App() {
                       navigateToPage('dashboard');
                       setShowMobileMenu(false);
                     }}
-                    className={`block w-full text-left px-3 py-2 rounded-md text-base font-medium ${
-                      currentPage === 'dashboard' 
-                        ? 'bg-yellow-100 text-yellow-800' 
-                        : 'text-gray-700 hover:text-yellow-600 hover:bg-gray-50'
+                    className={`block w-full text-left px-3 py-2 rounded-md text-base font-medium tracking-wide transition-colors ${
+                      currentPage === 'dashboard'
+                        ? 'text-[#fcbf49]'
+                        : 'text-[#fefefe] hover:text-[#fcbf49] hover:bg-[#0d1b2a]/70'
                     }`}
                   >
                     {t('nav.dashboard')}
@@ -566,10 +566,10 @@ function App() {
                         navigateToPage('admin');
                         setShowMobileMenu(false);
                       }}
-                      className={`block w-full text-left px-3 py-2 rounded-md text-base font-medium ${
-                        currentPage === 'admin' 
-                          ? 'bg-yellow-100 text-yellow-800' 
-                          : 'text-gray-700 hover:text-yellow-600 hover:bg-gray-50'
+                      className={`block w-full text-left px-3 py-2 rounded-md text-base font-medium tracking-wide transition-colors ${
+                        currentPage === 'admin'
+                          ? 'text-[#fcbf49]'
+                          : 'text-[#fefefe] hover:text-[#fcbf49] hover:bg-[#0d1b2a]/70'
                       }`}
                     >
                       {t('nav.admin')}
@@ -580,7 +580,7 @@ function App() {
                       logout();
                       setShowMobileMenu(false);
                     }}
-                    className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-red-600 hover:text-red-800 hover:bg-red-50"
+                    className="block w-full text-left px-3 py-2 rounded-md text-base font-medium tracking-wide text-red-400 hover:text-red-600 hover:bg-red-50 transition-colors"
                   >
                     {t('nav.logout')}
                   </button>
@@ -592,10 +592,10 @@ function App() {
                       navigateToPage('login');
                       setShowMobileMenu(false);
                     }}
-                    className={`block w-full text-left px-3 py-2 rounded-md text-base font-medium ${
-                      currentPage === 'login' 
-                        ? 'bg-yellow-100 text-yellow-800' 
-                        : 'text-gray-700 hover:text-yellow-600 hover:bg-gray-50'
+                    className={`block w-full text-left px-3 py-2 rounded-md text-base font-medium tracking-wide transition-colors ${
+                      currentPage === 'login'
+                        ? 'text-[#fcbf49]'
+                        : 'text-[#fefefe] hover:text-[#fcbf49] hover:bg-[#0d1b2a]/70'
                     }`}
                   >
                     {t('nav.login')}
@@ -605,7 +605,7 @@ function App() {
                       navigateToPage('register');
                       setShowMobileMenu(false);
                     }}
-                    className="block w-full text-left mt-2 bg-gradient-to-r from-yellow-400 to-yellow-600 text-white px-3 py-2 rounded-md text-base font-medium hover:from-yellow-500 hover:to-yellow-700 transition-all duration-200"
+                    className="block w-full text-left mt-2 bg-[#fcbf49] text-[#0d1b2a] px-3 py-2 rounded-md text-base font-medium tracking-wide shadow hover:bg-[#fcbf49]/90 transition-colors"
                   >
                     {t('nav.register')}
                   </button>
@@ -1142,9 +1142,9 @@ function App() {
   );
 
   const renderHome = () => (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-[#fefefe]">
       {/* Hero Section */}
-      <div className="relative bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 overflow-hidden">
+      <div className="relative bg-[#0d1b2a] overflow-hidden">
         <div className="absolute inset-0">
           <img
             src="https://images.unsplash.com/photo-1702628771524-25d5174e919b"
@@ -1154,25 +1154,23 @@ function App() {
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
           <div className="text-center">
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+            <h1 className="text-4xl md:text-6xl font-extrabold text-white tracking-wide mb-6">
               {t('hero.title')}
-              <span className="bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent block">
-                {t('hero.subtitle')}
-              </span>
+              <span className="text-[#fcbf49] block">{t('hero.subtitle')}</span>
             </h1>
-            <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl text-gray-200 mb-8 max-w-3xl mx-auto">
               {t('hero.description')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button
                 onClick={() => setCurrentPage(isAuthenticated ? 'submit-case' : 'register')}
-                className="bg-gradient-to-r from-yellow-400 to-yellow-600 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:from-yellow-500 hover:to-yellow-700 transition-all duration-200 transform hover:scale-105"
+                className="bg-[#fcbf49] text-[#0d1b2a] px-8 py-3 rounded-lg text-lg font-semibold shadow hover:bg-[#fcbf49]/90 transition-transform transform hover:scale-105"
               >
                 {t('hero.submitCase')}
               </button>
               <button
                 onClick={() => setCurrentPage('videos')}
-                className="border-2 border-yellow-400 text-yellow-400 px-8 py-3 rounded-lg text-lg font-semibold hover:bg-yellow-400 hover:text-white transition-all duration-200"
+                className="border-2 border-[#fcbf49] text-[#fcbf49] px-8 py-3 rounded-lg text-lg font-semibold hover:bg-[#fcbf49] hover:text-[#0d1b2a] transition-colors"
               >
                 {t('hero.watchVideos')}
               </button>
@@ -1182,13 +1180,13 @@ function App() {
       </div>
 
       {/* Services Section */}
-      <div className="py-16 bg-white">
+      <div className="py-16 bg-[#fefefe]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-wide text-[#0d1b2a] mb-4">
               {t('services.title')}
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg text-[#0d1b2a]/80 max-w-2xl mx-auto">
               {t('services.description')}
             </p>
           </div>
@@ -1224,16 +1222,16 @@ function App() {
                 image: "https://images.unsplash.com/photo-1600506451234-9e555c0c8d05"
               }
             ].map((service, index) => (
-              <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                <div className="h-48 bg-gradient-to-br from-yellow-100 to-yellow-200 flex items-center justify-center">
+              <div key={index} className="bg-[#fefefe] rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                <div className="h-48 bg-[#fcbf49]/20 flex items-center justify-center">
                   <span className="text-6xl">{service.icon}</span>
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3">{service.title}</h3>
-                  <p className="text-gray-600 mb-4">{service.description}</p>
+                  <h3 className="text-xl font-semibold text-[#0d1b2a] mb-3">{service.title}</h3>
+                  <p className="text-[#0d1b2a]/80 mb-4">{service.description}</p>
                   <button
                     onClick={() => setCurrentPage(isAuthenticated ? 'submit-case' : 'register')}
-                    className="text-yellow-600 hover:text-yellow-800 font-medium"
+                    className="text-[#0d1b2a] hover:text-[#fcbf49] font-semibold transition-colors"
                   >
                     {t('services.learnMore')} →
                   </button>
@@ -1245,24 +1243,24 @@ function App() {
       </div>
 
       {/* CTA Section */}
-      <div className="bg-gradient-to-r from-yellow-400 to-yellow-600 py-16">
+      <div className="bg-[#0d1b2a] py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-wide text-white mb-4">
             {t('cta.title')}
           </h2>
-          <p className="text-xl text-yellow-100 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-[#fcbf49] mb-8 max-w-2xl mx-auto">
             {t('cta.description')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
               onClick={() => setCurrentPage(isAuthenticated ? 'booking' : 'register')}
-              className="bg-white text-yellow-600 px-8 py-3 rounded-lg text-lg font-semibold hover:bg-gray-100 transition-all duration-200"
+              className="bg-[#fcbf49] text-[#0d1b2a] px-8 py-3 rounded-lg text-lg font-semibold shadow hover:bg-[#fcbf49]/90 transition-colors"
             >
               {t('cta.bookConsultation')}
             </button>
             <button
               onClick={() => setCurrentPage(isAuthenticated ? 'submit-case' : 'register')}
-              className="border-2 border-white text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-white hover:text-yellow-600 transition-all duration-200"
+              className="border-2 border-[#fcbf49] text-[#fcbf49] px-8 py-3 rounded-lg text-lg font-semibold hover:bg-[#fcbf49] hover:text-[#0d1b2a] transition-colors"
             >
               {t('cta.submitCase')}
             </button>
