@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import './App.css';
 import './i18n';
 
@@ -69,6 +71,10 @@ function App() {
   
   // About page state
   const [aboutLoading, setAboutLoading] = useState(false);
+
+  useEffect(() => {
+    AOS.init({ duration: 800 });
+  }, []);
   
   // Set document direction based on language
   useEffect(() => {
@@ -626,7 +632,7 @@ function App() {
           <p className="text-xl text-gray-600">Your trusted legal partner in Lebanon</p>
         </div>
 
-        <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
+        <div className="bg-white rounded-lg shadow-lg p-8 mb-8" data-aos="fade-up">
           <h2 className="text-2xl font-bold text-gray-900 mb-6">Our Story</h2>
           <p className="text-gray-700 mb-4">
             Founded in 2020, Union Law Firm has been dedicated to providing exceptional legal services to families across Lebanon. We specialize in family law matters, understanding the sensitive nature of these issues and providing compassionate, professional representation.
@@ -636,14 +642,14 @@ function App() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 mb-8">
-          <div className="bg-white rounded-lg shadow-lg p-6">
+        <div className="grid md:grid-cols-2 gap-8 mb-8" data-aos="fade-up">
+          <div className="bg-white rounded-lg shadow-lg p-6 transition-transform hover:scale-105 ring-1 ring-gray-200">
             <h3 className="text-xl font-bold text-gray-900 mb-4">Our Mission</h3>
             <p className="text-gray-700">
               To provide compassionate, skilled legal representation to families in Lebanon, ensuring that every client receives personalized attention and the highest quality legal services in their time of need.
             </p>
           </div>
-          <div className="bg-white rounded-lg shadow-lg p-6">
+          <div className="bg-white rounded-lg shadow-lg p-6 transition-transform hover:scale-105 ring-1 ring-gray-200">
             <h3 className="text-xl font-bold text-gray-900 mb-4">Our Values</h3>
             <ul className="text-gray-700 space-y-2">
               <li>• Integrity and transparency in all dealings</li>
@@ -654,7 +660,7 @@ function App() {
           </div>
         </div>
 
-        <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
+        <div className="bg-white rounded-lg shadow-lg p-8 mb-8" data-aos="fade-up">
           <h2 className="text-2xl font-bold text-gray-900 mb-6">Our Expertise</h2>
           <div className="grid md:grid-cols-2 gap-6">
             <div>
@@ -676,19 +682,19 @@ function App() {
           </div>
         </div>
 
-        <div className="bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-lg p-8 text-white text-center">
+        <div className="bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-lg p-8 text-white text-center" data-aos="zoom-in">
           <h2 className="text-2xl font-bold mb-4">Ready to Get Started?</h2>
           <p className="text-xl mb-6">Contact us today for a consultation about your legal needs.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
               onClick={() => navigateToPage('contact')}
-              className="bg-white text-yellow-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+              className="bg-white text-yellow-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-transform transform hover:scale-105 ring-1 ring-white"
             >
               Contact Us
             </button>
             <button
               onClick={() => navigateToPage('booking')}
-              className="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-yellow-600 transition-colors"
+              className="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-yellow-600 transition-transform transform hover:scale-105 ring-1 ring-white"
             >
               Book Consultation
             </button>
@@ -706,8 +712,8 @@ function App() {
           <p className="text-xl text-gray-600">Get in touch with our legal team</p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
-          <div className="bg-white rounded-lg shadow-lg p-8">
+        <div className="grid md:grid-cols-2 gap-8" data-aos="fade-up">
+          <div className="bg-white rounded-lg shadow-lg p-8" data-aos="fade-up">
             <h2 className="text-2xl font-bold text-gray-900 mb-6">Get in Touch</h2>
             <div className="space-y-4">
               <div className="flex items-start">
@@ -752,7 +758,7 @@ function App() {
             </div>
           </div>
 
-          <div className="bg-white rounded-lg shadow-lg p-8">
+          <div className="bg-white rounded-lg shadow-lg p-8" data-aos="fade-up">
             <h2 className="text-2xl font-bold text-gray-900 mb-6">Send us a Message</h2>
             <form className="space-y-4">
               <div>
@@ -789,7 +795,7 @@ function App() {
               </div>
               <button
                 type="submit"
-                className="w-full bg-gradient-to-r from-yellow-400 to-yellow-600 text-white py-3 px-4 rounded-md font-semibold hover:from-yellow-500 hover:to-yellow-700 transition-colors"
+                className="w-full bg-gradient-to-r from-yellow-400 to-yellow-600 text-white py-3 px-4 rounded-md font-semibold hover:from-yellow-500 hover:to-yellow-700 transition-transform transform hover:scale-105 ring-1 ring-yellow-500"
               >
                 Send Message
               </button>
@@ -1144,7 +1150,7 @@ function App() {
   const renderHome = () => (
     <div className="min-h-screen bg-[#fefefe]">
       {/* Hero Section */}
-      <div className="relative bg-[#0d1b2a] overflow-hidden">
+      <div className="relative bg-[#0d1b2a] overflow-hidden" data-aos="fade-up">
         <div className="absolute inset-0">
           <img
             src="https://images.unsplash.com/photo-1702628771524-25d5174e919b"
@@ -1164,13 +1170,13 @@ function App() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button
                 onClick={() => setCurrentPage(isAuthenticated ? 'submit-case' : 'register')}
-                className="bg-[#fcbf49] text-[#0d1b2a] px-8 py-3 rounded-lg text-lg font-semibold shadow hover:bg-[#fcbf49]/90 transition-transform transform hover:scale-105"
+                className="bg-[#fcbf49] text-[#0d1b2a] px-8 py-3 rounded-lg text-lg font-semibold shadow hover:bg-[#fcbf49]/90 transition-transform transform hover:scale-105 ring-1 ring-[#fcbf49] ring-offset-2"
               >
                 {t('hero.submitCase')}
               </button>
               <button
                 onClick={() => setCurrentPage('videos')}
-                className="border-2 border-[#fcbf49] text-[#fcbf49] px-8 py-3 rounded-lg text-lg font-semibold hover:bg-[#fcbf49] hover:text-[#0d1b2a] transition-colors"
+                className="border-2 border-[#fcbf49] text-[#fcbf49] px-8 py-3 rounded-lg text-lg font-semibold hover:bg-[#fcbf49] hover:text-[#0d1b2a] transition-colors ring-1 ring-[#fcbf49] ring-offset-2"
               >
                 {t('hero.watchVideos')}
               </button>
@@ -1180,7 +1186,7 @@ function App() {
       </div>
 
       {/* Services Section */}
-      <div className="py-16 bg-[#fefefe]">
+      <div className="py-16 bg-[#fefefe]" data-aos="fade-up">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold tracking-wide text-[#0d1b2a] mb-4">
@@ -1222,7 +1228,11 @@ function App() {
                 image: "https://images.unsplash.com/photo-1600506451234-9e555c0c8d05"
               }
             ].map((service, index) => (
-              <div key={index} className="bg-[#fefefe] rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+              <div
+                key={index}
+                className="bg-[#fefefe] rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-transform duration-300 hover:scale-105 ring-1 ring-[#fcbf49]/30"
+                data-aos="zoom-in"
+              >
                 <div className="h-48 bg-[#fcbf49]/20 flex items-center justify-center">
                   <span className="text-6xl">{service.icon}</span>
                 </div>
@@ -1231,7 +1241,7 @@ function App() {
                   <p className="text-[#0d1b2a]/80 mb-4">{service.description}</p>
                   <button
                     onClick={() => setCurrentPage(isAuthenticated ? 'submit-case' : 'register')}
-                    className="text-[#0d1b2a] hover:text-[#fcbf49] font-semibold transition-colors"
+                    className="text-[#0d1b2a] hover:text-[#fcbf49] font-semibold transition-colors ring-1 ring-[#fcbf49] rounded-md px-2 py-1"
                   >
                     {t('services.learnMore')} →
                   </button>
@@ -1243,7 +1253,7 @@ function App() {
       </div>
 
       {/* CTA Section */}
-      <div className="bg-[#0d1b2a] py-16">
+      <div className="bg-[#0d1b2a] py-16" data-aos="fade-up">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold tracking-wide text-white mb-4">
             {t('cta.title')}
@@ -1254,13 +1264,13 @@ function App() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
               onClick={() => setCurrentPage(isAuthenticated ? 'booking' : 'register')}
-              className="bg-[#fcbf49] text-[#0d1b2a] px-8 py-3 rounded-lg text-lg font-semibold shadow hover:bg-[#fcbf49]/90 transition-colors"
+              className="bg-[#fcbf49] text-[#0d1b2a] px-8 py-3 rounded-lg text-lg font-semibold shadow hover:bg-[#fcbf49]/90 transition-transform transform hover:scale-105 ring-1 ring-[#fcbf49] ring-offset-2"
             >
               {t('cta.bookConsultation')}
             </button>
             <button
               onClick={() => setCurrentPage(isAuthenticated ? 'submit-case' : 'register')}
-              className="border-2 border-[#fcbf49] text-[#fcbf49] px-8 py-3 rounded-lg text-lg font-semibold hover:bg-[#fcbf49] hover:text-[#0d1b2a] transition-colors"
+              className="border-2 border-[#fcbf49] text-[#fcbf49] px-8 py-3 rounded-lg text-lg font-semibold hover:bg-[#fcbf49] hover:text-[#0d1b2a] transition-transform transform hover:scale-105 ring-1 ring-[#fcbf49] ring-offset-2"
             >
               {t('cta.submitCase')}
             </button>
@@ -1306,7 +1316,7 @@ function App() {
     return (
       <div className="min-h-screen bg-gray-50 flex flex-col">
         <div className="flex-1 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-md w-full space-y-8">
+          <div className="max-w-md w-full space-y-8" data-aos="fade-up">
           <div>
             <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
               {t('auth.signInTitle')}
@@ -1345,7 +1355,7 @@ function App() {
               <button
                 type="submit"
                 disabled={loginLoading}
-                className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-gradient-to-r from-yellow-400 to-yellow-600 hover:from-yellow-500 hover:to-yellow-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500 disabled:opacity-50"
+                className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-gradient-to-r from-yellow-400 to-yellow-600 hover:from-yellow-500 hover:to-yellow-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500 disabled:opacity-50 transition-transform transform hover:scale-105 ring-1 ring-yellow-500"
               >
                 {loginLoading ? t('auth.signingIn') : t('auth.signIn')}
               </button>
@@ -1402,7 +1412,7 @@ function App() {
 
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-md w-full space-y-8">
+        <div className="max-w-md w-full space-y-8" data-aos="fade-up">
           <div>
             <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
               {t('auth.createAccountTitle')}
@@ -1452,7 +1462,7 @@ function App() {
               <button
                 type="submit"
                 disabled={registerLoading}
-                className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-gradient-to-r from-yellow-400 to-yellow-600 hover:from-yellow-500 hover:to-yellow-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500 disabled:opacity-50"
+                className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-gradient-to-r from-yellow-400 to-yellow-600 hover:from-yellow-500 hover:to-yellow-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500 disabled:opacity-50 transition-transform transform hover:scale-105 ring-1 ring-yellow-500"
               >
                 {registerLoading ? t('auth.creatingAccount') : t('auth.signUp')}
               </button>
