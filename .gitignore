@@ -77,4 +77,15 @@ agenthub/agents/youtube/db
 .cache/
 
 # Mobile development
-android-sdk/ 
+android-sdk/
+
+# Frontend + Backend env files
+frontend/.env
+backend/.env
+
+# Uploads (soumissions de documents utilisateurs)
+uploads/
+
+# Local build artifacts
+frontend/build/
+backend/__pycache__/
