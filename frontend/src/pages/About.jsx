@@ -13,6 +13,9 @@ const About = () => {
           <p className="text-gray-700 text-lg text-center md:text-left">
             Union Law Firm is a Beirut-based legal office led by Attorney Omar Iskandarani, a member of the Beirut Bar Association. With over 10 years of experience in family law, the firm provides professional legal services in divorce, custody, inheritance, and support matters. The firm is dedicated to serving both local and international clients with discretion, empathy, and legal excellence.
           </p>
+          <p className="mt-4 text-base leading-relaxed text-gray-100">
+            Driven by values of trust and transparency, Maître Omar Iskandarani combines a rigorous legal approach with a deep understanding of family issues. His mission: making law accessible, human, and tailored to each case.
+          </p>
         </div>
       </div>
     </div>

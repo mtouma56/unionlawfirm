@@ -305,7 +305,7 @@ function App() {
                 alt="Union Law Firm Logo"
                 className="h-10 w-auto mr-2"
               />
-              <span className="block sm:inline text-white font-semibold text-sm sm:text-lg">Union Law Firm</span>
+              <span className="block text-sm sm:text-lg text-white font-semibold">Union Law Firm</span>
             </button>
           </div>
           
@@ -551,6 +551,7 @@ function App() {
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-[#0d1b2a] border-t border-[#fcbf49]">
               <button
                 onClick={() => {
+                  window.scrollTo(0, 0);
                   navigateToPage('home');
                   setShowMobileMenu(false);
                 }}
@@ -564,6 +565,7 @@ function App() {
               </button>
               <button
                 onClick={() => {
+                  window.scrollTo(0, 0);
                   navigateToPage('videos');
                   setShowMobileMenu(false);
                 }}
@@ -577,6 +579,7 @@ function App() {
               </button>
               <button
                 onClick={() => {
+                  window.scrollTo(0, 0);
                   navigateToPage('about');
                   setShowMobileMenu(false);
                 }}
@@ -593,6 +596,7 @@ function App() {
                 <>
                   <button
                     onClick={() => {
+                      window.scrollTo(0, 0);
                       navigateToPage('submit-case');
                       setShowMobileMenu(false);
                     }}
@@ -606,6 +610,7 @@ function App() {
                   </button>
                   <button
                     onClick={() => {
+                      window.scrollTo(0, 0);
                       navigateToPage('booking');
                       setShowMobileMenu(false);
                     }}
@@ -619,6 +624,7 @@ function App() {
                   </button>
                   <button
                     onClick={() => {
+                      window.scrollTo(0, 0);
                       navigateToPage('dashboard');
                       setShowMobileMenu(false);
                     }}
@@ -633,6 +639,7 @@ function App() {
                   {user?.role === 'admin' && (
                     <button
                       onClick={() => {
+                        window.scrollTo(0, 0);
                         navigateToPage('admin');
                         setShowMobileMenu(false);
                       }}
@@ -659,6 +666,7 @@ function App() {
                 <>
                   <button
                     onClick={() => {
+                      window.scrollTo(0, 0);
                       navigateToPage('login');
                       setShowMobileMenu(false);
                     }}
@@ -672,6 +680,7 @@ function App() {
                   </button>
                   <button
                     onClick={() => {
+                      window.scrollTo(0, 0);
                       navigateToPage('register');
                       setShowMobileMenu(false);
                     }}
@@ -1394,7 +1403,7 @@ function App() {
       </div>
 
       {/* Sticky CTA for mobile only */}
-      <div className="fixed bottom-0 left-0 right-0 z-50 bg-yellow-500 text-white text-center py-3 shadow-lg md:hidden">
+      <div className="fixed left-0 right-0 z-50 bg-yellow-500 text-white text-center py-3 shadow-lg md:hidden pb-4 bottom-[env(safe-area-inset-bottom)]">
         <button
           onClick={() => {
             window.scrollTo(0, 0);
@@ -1660,7 +1669,10 @@ function App() {
               <p>Your case has been submitted and is now pending review. We'll contact you soon.</p>
             </div>
             <button
-              onClick={() => navigateToPage('dashboard')}
+              onClick={() => {
+                window.scrollTo(0, 0);
+                navigateToPage('dashboard');
+              }}
               className="mt-4 bg-gradient-to-r from-yellow-400 to-yellow-600 text-white px-6 py-2 rounded-lg hover:from-yellow-500 hover:to-yellow-700 transition-all duration-200"
             >
               Go to Dashboard
@@ -1931,7 +1943,10 @@ function App() {
               <p>Your appointment has been scheduled. Payment will be processed separately.</p>
             </div>
             <button
-              onClick={() => navigateToPage('dashboard')}
+              onClick={() => {
+                window.scrollTo(0, 0);
+                navigateToPage('dashboard');
+              }}
               className="mt-4 bg-gradient-to-r from-yellow-400 to-yellow-600 text-white px-6 py-2 rounded-lg hover:from-yellow-500 hover:to-yellow-700 transition-all duration-200"
             >
               Go to Dashboard
