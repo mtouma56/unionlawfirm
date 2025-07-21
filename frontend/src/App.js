@@ -76,6 +76,14 @@ function App() {
   useEffect(() => {
     AOS.init({ duration: 800 });
   }, []);
+
+  // Remove Emergent badge injected via index.html if present
+  useEffect(() => {
+    const badge = document.getElementById('emergent-badge');
+    if (badge) {
+      badge.remove();
+    }
+  }, []);
   
   // Set document direction based on language
   useEffect(() => {
