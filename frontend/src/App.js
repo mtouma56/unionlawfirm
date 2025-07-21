@@ -297,7 +297,7 @@ function App() {
                 alt="Union Law Firm Logo"
                 className="h-10 w-auto mr-2"
               />
-              <span className="text-white font-semibold text-lg hidden sm:inline">Union Law Firm</span>
+              <span className="block sm:inline text-white font-semibold text-sm sm:text-lg">Union Law Firm</span>
             </button>
           </div>
           
