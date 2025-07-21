@@ -8,7 +8,8 @@
     "admin": "Admin",
     "login": "Login",
     "register": "Register",
-    "logout": "Logout"
+    "logout": "Logout",
+    "about": "About"
   },
   "hero": {
     "title": "Expert Family Law",

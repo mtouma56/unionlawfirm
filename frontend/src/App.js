@@ -4,6 +4,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import './App.css';
 import './i18n';
+import About from './pages/About';
 
 const API_URL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:8001';
 
@@ -285,13 +286,18 @@ function App() {
           {/* Logo */}
           <div className="flex items-center">
             <button 
-              onClick={() => navigateToPage('home')}
+              onClick={() => {
+                window.scrollTo(0, 0);
+                navigateToPage('home');
+              }}
               className="flex-shrink-0 flex items-center hover:opacity-80 transition-opacity"
             >
-              <div className="w-10 h-10 bg-[#fcbf49] rounded-full flex items-center justify-center shadow-lg">
-                <span className="text-white font-bold text-sm">⚖</span>
-              </div>
-              <span className="ml-3 text-xl font-bold text-[#fefefe]">Union Law Firm</span>
+              <img
+                src="/assets/logo.png"
+                alt="Union Law Firm Logo"
+                className="h-10 w-auto mr-2"
+              />
+              <span className="text-white font-semibold text-lg hidden sm:inline">Union Law Firm</span>
             </button>
           </div>
           
@@ -299,7 +305,10 @@ function App() {
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
               <button
-                onClick={() => navigateToPage('home')}
+                onClick={() => {
+                  window.scrollTo(0, 0);
+                  navigateToPage('home');
+                }}
                 className={`px-3 py-2 rounded-md text-sm font-medium tracking-wide transition-colors ${
                   currentPage === 'home'
                     ? 'text-[#fcbf49]'
@@ -309,7 +318,10 @@ function App() {
                 {t('nav.home')}
               </button>
               <button
-                onClick={() => navigateToPage('videos')}
+                onClick={() => {
+                  window.scrollTo(0, 0);
+                  navigateToPage('videos');
+                }}
                 className={`px-3 py-2 rounded-md text-sm font-medium tracking-wide transition-colors ${
                   currentPage === 'videos'
                     ? 'text-[#fcbf49]'
@@ -318,10 +330,26 @@ function App() {
               >
                 {t('nav.videos')}
               </button>
+              <button
+                onClick={() => {
+                  window.scrollTo(0, 0);
+                  navigateToPage('about');
+                }}
+                className={`px-3 py-2 rounded-md text-sm font-medium tracking-wide transition-colors ${
+                  currentPage === 'about'
+                    ? 'text-[#fcbf49]'
+                    : 'text-[#fefefe] hover:text-[#fcbf49]'
+                }`}
+              >
+                {t('nav.about', 'About')}
+              </button>
               {isAuthenticated ? (
                 <>
                   <button
-                    onClick={() => navigateToPage('submit-case')}
+                    onClick={() => {
+                      window.scrollTo(0, 0);
+                      navigateToPage('submit-case');
+                    }}
                     className={`px-3 py-2 rounded-md text-sm font-medium tracking-wide transition-colors ${
                       currentPage === 'submit-case'
                         ? 'text-[#fcbf49]'
@@ -331,7 +359,10 @@ function App() {
                     {t('nav.submitCase')}
                   </button>
                   <button
-                    onClick={() => navigateToPage('booking')}
+                    onClick={() => {
+                      window.scrollTo(0, 0);
+                      navigateToPage('booking');
+                    }}
                     className={`px-3 py-2 rounded-md text-sm font-medium tracking-wide transition-colors ${
                       currentPage === 'booking'
                         ? 'text-[#fcbf49]'
@@ -341,7 +372,10 @@ function App() {
                     {t('nav.booking')}
                   </button>
                   <button
-                    onClick={() => navigateToPage('dashboard')}
+                    onClick={() => {
+                      window.scrollTo(0, 0);
+                      navigateToPage('dashboard');
+                    }}
                     className={`px-3 py-2 rounded-md text-sm font-medium tracking-wide transition-colors ${
                       currentPage === 'dashboard'
                         ? 'text-[#fcbf49]'
@@ -352,7 +386,10 @@ function App() {
                   </button>
                   {user?.role === 'admin' && (
                     <button
-                      onClick={() => navigateToPage('admin')}
+                      onClick={() => {
+                        window.scrollTo(0, 0);
+                        navigateToPage('admin');
+                      }}
                       className={`px-3 py-2 rounded-md text-sm font-medium tracking-wide transition-colors ${
                         currentPage === 'admin'
                           ? 'text-[#fcbf49]'
@@ -372,7 +409,10 @@ function App() {
               ) : (
                 <>
                   <button
-                    onClick={() => navigateToPage('login')}
+                    onClick={() => {
+                      window.scrollTo(0, 0);
+                      navigateToPage('login');
+                    }}
                     className={`px-3 py-2 rounded-md text-sm font-medium tracking-wide transition-colors ${
                       currentPage === 'login'
                         ? 'text-[#fcbf49]'
@@ -382,7 +422,10 @@ function App() {
                     {t('nav.login')}
                   </button>
                   <button
-                    onClick={() => navigateToPage('register')}
+                    onClick={() => {
+                      window.scrollTo(0, 0);
+                      navigateToPage('register');
+                    }}
                     className="bg-[#fcbf49] text-[#0d1b2a] px-4 py-2 rounded-md text-sm font-medium tracking-wide shadow hover:bg-[#fcbf49]/90 transition-colors"
                   >
                     {t('nav.register')}
@@ -524,6 +567,19 @@ function App() {
               >
                 {t('nav.videos')}
               </button>
+              <button
+                onClick={() => {
+                  navigateToPage('about');
+                  setShowMobileMenu(false);
+                }}
+                className={`block w-full text-left px-3 py-2 rounded-md text-base font-medium tracking-wide transition-colors ${
+                  currentPage === 'about'
+                    ? 'text-[#fcbf49]'
+                    : 'text-[#fefefe] hover:text-[#fcbf49] hover:bg-[#0d1b2a]/70'
+                }`}
+              >
+                {t('nav.about', 'About')}
+              </button>
               
               {isAuthenticated ? (
                 <>
@@ -627,6 +683,13 @@ function App() {
   const renderAbout = () => (
     <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
+        <div className="flex justify-center mb-8">
+          <img
+            src="/assets/c.jpg"
+            alt="Lawyer Omar Iskandarani"
+            className="w-48 h-48 rounded-full shadow-lg object-cover"
+          />
+        </div>
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">About Union Law Firm</h1>
           <p className="text-xl text-gray-600">Your trusted legal partner in Lebanon</p>
@@ -686,18 +749,24 @@ function App() {
           <h2 className="text-2xl font-bold mb-4">Ready to Get Started?</h2>
           <p className="text-xl mb-6">Contact us today for a consultation about your legal needs.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button
-              onClick={() => navigateToPage('contact')}
-              className="bg-white text-yellow-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-transform transform hover:scale-105 ring-1 ring-white"
-            >
-              Contact Us
-            </button>
-            <button
-              onClick={() => navigateToPage('booking')}
-              className="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-yellow-600 transition-transform transform hover:scale-105 ring-1 ring-white"
-            >
-              Book Consultation
-            </button>
+              <button
+                onClick={() => {
+                  window.scrollTo(0, 0);
+                  navigateToPage('contact');
+                }}
+                className="bg-white text-yellow-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-transform transform hover:scale-105 ring-1 ring-white"
+              >
+                Contact Us
+              </button>
+              <button
+                onClick={() => {
+                  window.scrollTo(0, 0);
+                  navigateToPage('booking');
+                }}
+                className="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-yellow-600 transition-transform transform hover:scale-105 ring-1 ring-white"
+              >
+                Book Consultation
+              </button>
           </div>
         </div>
       </div>
@@ -994,7 +1063,10 @@ function App() {
             <ul className="space-y-2 text-gray-300">
               <li>
                 <button
-                  onClick={() => navigateToPage('submit-case')}
+                  onClick={() => {
+                    window.scrollTo(0, 0);
+                    navigateToPage('submit-case');
+                  }}
                   className="text-sm hover:text-yellow-400 transition-colors"
                 >
                   {t('footer.services.divorce')}
@@ -1002,7 +1074,10 @@ function App() {
               </li>
               <li>
                 <button
-                  onClick={() => navigateToPage('submit-case')}
+                  onClick={() => {
+                    window.scrollTo(0, 0);
+                    navigateToPage('submit-case');
+                  }}
                   className="text-sm hover:text-yellow-400 transition-colors"
                 >
                   {t('footer.services.inheritance')}
@@ -1010,7 +1085,10 @@ function App() {
               </li>
               <li>
                 <button
-                  onClick={() => navigateToPage('submit-case')}
+                  onClick={() => {
+                    window.scrollTo(0, 0);
+                    navigateToPage('submit-case');
+                  }}
                   className="text-sm hover:text-yellow-400 transition-colors"
                 >
                   {t('footer.services.custody')}
@@ -1018,7 +1096,10 @@ function App() {
               </li>
               <li>
                 <button
-                  onClick={() => navigateToPage('submit-case')}
+                  onClick={() => {
+                    window.scrollTo(0, 0);
+                    navigateToPage('submit-case');
+                  }}
                   className="text-sm hover:text-yellow-400 transition-colors"
                 >
                   {t('footer.services.alimony')}
@@ -1026,7 +1107,10 @@ function App() {
               </li>
               <li>
                 <button
-                  onClick={() => navigateToPage('booking')}
+                  onClick={() => {
+                    window.scrollTo(0, 0);
+                    navigateToPage('booking');
+                  }}
                   className="text-sm hover:text-yellow-400 transition-colors"
                 >
                   {t('footer.services.consultation')}
@@ -1043,7 +1127,10 @@ function App() {
             <ul className="space-y-2 text-gray-300">
               <li>
                 <button
-                  onClick={() => navigateToPage('about')}
+                  onClick={() => {
+                    window.scrollTo(0, 0);
+                    navigateToPage('about');
+                  }}
                   className="text-sm hover:text-yellow-400 transition-colors"
                 >
                   {t('footer.quickLinks.about')}
@@ -1051,7 +1138,10 @@ function App() {
               </li>
               <li>
                 <button
-                  onClick={() => navigateToPage('home')}
+                  onClick={() => {
+                    window.scrollTo(0, 0);
+                    navigateToPage('home');
+                  }}
                   className="text-sm hover:text-yellow-400 transition-colors"
                 >
                   {t('footer.quickLinks.services')}
@@ -1059,7 +1149,10 @@ function App() {
               </li>
               <li>
                 <button
-                  onClick={() => navigateToPage('videos')}
+                  onClick={() => {
+                    window.scrollTo(0, 0);
+                    navigateToPage('videos');
+                  }}
                   className="text-sm hover:text-yellow-400 transition-colors"
                 >
                   {t('footer.quickLinks.videos')}
@@ -1067,7 +1160,10 @@ function App() {
               </li>
               <li>
                 <button
-                  onClick={() => navigateToPage('contact')}
+                  onClick={() => {
+                    window.scrollTo(0, 0);
+                    navigateToPage('contact');
+                  }}
                   className="text-sm hover:text-yellow-400 transition-colors"
                 >
                   {t('footer.quickLinks.contact')}
@@ -1075,7 +1171,10 @@ function App() {
               </li>
               <li>
                 <button
-                  onClick={() => navigateToPage('privacy')}
+                  onClick={() => {
+                    window.scrollTo(0, 0);
+                    navigateToPage('privacy');
+                  }}
                   className="text-sm hover:text-yellow-400 transition-colors"
                 >
                   {t('footer.quickLinks.privacy')}
@@ -1083,7 +1182,10 @@ function App() {
               </li>
               <li>
                 <button
-                  onClick={() => navigateToPage('terms')}
+                  onClick={() => {
+                    window.scrollTo(0, 0);
+                    navigateToPage('terms');
+                  }}
                   className="text-sm hover:text-yellow-400 transition-colors"
                 >
                   {t('footer.quickLinks.terms')}
@@ -1097,6 +1199,11 @@ function App() {
             <h3 className="text-lg font-semibold mb-4 text-yellow-400">
               {t('footer.social.title')}
             </h3>
+            {/* Logo and Name */}
+            <div className="flex items-center mb-4">
+              <img src="/assets/logo.png" alt="Union Law Firm Logo" className="h-8 w-auto mr-2" />
+              <span className="text-white font-semibold text-lg">Union Law Firm</span>
+            </div>
             <div className="flex space-x-4 mb-6">
               <a href="#" className="text-gray-300 hover:text-yellow-400 transition-colors">
                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -1276,6 +1383,19 @@ function App() {
             </button>
           </div>
         </div>
+      </div>
+
+      {/* Sticky CTA for mobile only */}
+      <div className="fixed bottom-0 left-0 right-0 z-50 bg-yellow-500 text-white text-center py-3 shadow-lg md:hidden">
+        <button
+          onClick={() => {
+            window.scrollTo(0, 0);
+            navigateToPage('booking');
+          }}
+          className="text-lg font-semibold w-full"
+        >
+          📅 Book Consultation
+        </button>
       </div>
     </div>
   );
