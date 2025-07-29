@@ -5,6 +5,7 @@ import 'aos/dist/aos.css';
 import './App.css';
 import './i18n';
 import About from './pages/About';
+import supabase from './lib/supabase';
 
 const API_URL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:8001';
 
@@ -237,18 +238,12 @@ function App() {
 
   const fetchUserProfile = async () => {
     try {
-      const response = await fetch(`${API_URL}/api/auth/me`, {
-        headers: {
-          'Authorization': `Bearer ${token}`
-        }
-      });
-      
-      if (response.ok) {
-        const userData = await response.json();
-        setUser(userData);
-        setIsAuthenticated(true);
-      } else {
+      const { data, error } = await supabase.auth.getUser();
+      if (error || !data.user) {
         logout();
+      } else {
+        setUser(data.user);
+        setIsAuthenticated(true);
       }
     } catch (error) {
       console.error('Error fetching user profile:', error);
@@ -264,6 +259,7 @@ function App() {
   };
 
   const logout = () => {
+    supabase.auth.signOut();
     localStorage.removeItem('token');
     setToken(null);
     setUser(null);
@@ -1424,27 +1420,24 @@ function App() {
       setLoginError('');
 
       try {
-        const response = await fetch(`${API_URL}/api/auth/login`, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ email: loginEmail, password: loginPassword }),
+        const { data, error } = await supabase.auth.signInWithPassword({
+          email: loginEmail,
+          password: loginPassword,
         });
 
-        const data = await response.json();
-
-        if (response.ok) {
-          localStorage.setItem('token', data.access_token);
-          setToken(data.access_token);
+        if (error) {
+          setLoginError(error.message || t('auth.loginError'));
+        } else {
+          if (data.session) {
+            localStorage.setItem('token', data.session.access_token);
+            setToken(data.session.access_token);
+          }
           setUser(data.user);
           setIsAuthenticated(true);
           setCurrentPage('dashboard');
-        } else {
-          setLoginError(data.detail || 'Login failed');
         }
-      } catch (error) {
-        setLoginError('Network error. Please try again.');
+      } catch (err) {
+        setLoginError(t('auth.loginError'));
       } finally {
         setLoginLoading(false);
       }
@@ -1521,27 +1514,24 @@ function App() {
       setRegisterError('');
 
       try {
-        const response = await fetch(`${API_URL}/api/auth/register`, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(registerFormData),
+        const { data, error } = await supabase.auth.signUp({
+          email: registerFormData.email,
+          password: registerFormData.password,
         });
 
-        const data = await response.json();
-
-        if (response.ok) {
-          localStorage.setItem('token', data.access_token);
-          setToken(data.access_token);
+        if (error) {
+          setRegisterError(error.message || t('auth.loginError'));
+        } else {
+          if (data.session) {
+            localStorage.setItem('token', data.session.access_token);
+            setToken(data.session.access_token);
+          }
           setUser(data.user);
           setIsAuthenticated(true);
           setCurrentPage('dashboard');
-        } else {
-          setRegisterError(data.detail || 'Registration failed');
         }
-      } catch (error) {
-        setRegisterError('Network error. Please try again.');
+      } catch (err) {
+        setRegisterError(t('auth.loginError'));
       } finally {
         setRegisterLoading(false);
       }
