@@ -1517,6 +1517,12 @@ function App() {
         const { data, error } = await supabase.auth.signUp({
           email: registerFormData.email,
           password: registerFormData.password,
+          options: {
+            data: {
+              full_name: registerFormData.name,
+              ...(registerFormData.phone && { phone: registerFormData.phone }),
+            },
+          },
         });
 
         if (error) {
