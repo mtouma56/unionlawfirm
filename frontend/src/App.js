@@ -1526,9 +1526,14 @@ function App() {
         });
 
         if (error) {
-          setRegisterError(error.message || t('auth.loginError'));
+          console.error('Sign up error:', error.message, data);
+          if (error.message && error.message.toLowerCase().includes('already')) {
+            setRegisterError('Un compte avec cet email existe déjà');
+          } else {
+            setRegisterError(error.message || t('auth.loginError'));
+          }
         } else {
-          if (data.session) {
+          if (data && data.session) {
             localStorage.setItem('token', data.session.access_token);
             setToken(data.session.access_token);
           }
@@ -1537,6 +1542,7 @@ function App() {
           setCurrentPage('dashboard');
         }
       } catch (err) {
+        console.error('Unexpected sign up error:', err);
         setRegisterError(t('auth.loginError'));
       } finally {
         setRegisterLoading(false);
