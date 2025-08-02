@@ -29,10 +29,16 @@ function getEnvVar(...keys) {
   return undefined;
 }
 
-// Attempt to retrieve variables using both Vite-style and generic names
-const supabaseUrl = getEnvVar("VITE_SUPABASE_URL", "SUPABASE_URL");
+// Attempt to retrieve variables using multiple possible prefixes so it works
+// with Create React App (REACT_APP_), Vite (VITE_) and generic names
+const supabaseUrl = getEnvVar(
+  "VITE_SUPABASE_URL",
+  "REACT_APP_SUPABASE_URL",
+  "SUPABASE_URL",
+);
 const supabaseAnonKey = getEnvVar(
   "VITE_SUPABASE_ANON_KEY",
+  "REACT_APP_SUPABASE_ANON_KEY",
   "SUPABASE_ANON_KEY",
 );
 
