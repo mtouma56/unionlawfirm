@@ -33,13 +33,20 @@ const supabaseUrl =
 const supabaseAnonKey =
   getEnvVar("VITE_SUPABASE_ANON_KEY") ||
   getEnvVar("REACT_APP_SUPABASE_ANON_KEY") ||
-  getEnvVar("SUPABASE_ANON_KEY");
+  getEnvVar("SUPABASE_ANON_KEY") ||
+  // Support more generic env variable names that some setups may use
+  getEnvVar("VITE_ANON_KEY") ||
+  getEnvVar("REACT_APP_ANON_KEY") ||
+  getEnvVar("ANON_KEY");
 
 if (!supabaseUrl || !supabaseAnonKey) {
   // Provide a visible but non-blocking error in the console for missing vars
   console.error(
     "[Supabase] Supabase URL and/or Anon Key is missing in environment variables.",
+    { supabaseUrl, supabaseAnonKeyPresent: Boolean(supabaseAnonKey) }
   );
+} else {
+  console.log("[Supabase] Client initialized", { supabaseUrl });
 }
 
 // Only create the client when both variables are available

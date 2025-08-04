@@ -1510,10 +1510,19 @@ function App() {
   const renderRegister = () => {
     const handleSubmit = async (e) => {
       e.preventDefault();
+      console.log('Register form submitted', registerFormData);
       setRegisterLoading(true);
       setRegisterError('');
 
+      if (!supabase) {
+        console.error('Supabase client is null during registration');
+        setRegisterError(t('auth.loginError'));
+        setRegisterLoading(false);
+        return;
+      }
+
       try {
+        console.log('Using Supabase client', supabase);
         const { data, error } = await supabase.auth.signUp({
           email: registerFormData.email,
           password: registerFormData.password,
